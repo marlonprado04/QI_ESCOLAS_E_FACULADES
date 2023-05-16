@@ -1,0 +1,33 @@
+import java.util.Scanner;
+import java.util.*;
+
+public class Numeros{
+    
+    public static void main(String args[]){
+        
+        //Declarando classe Scanner que serve para inputar informação do usuário
+        Scanner entrada = new Scanner(System.in);
+        
+        //Declarando ArrayList de números
+        List<Integer> numeros = new ArrayList<Integer>();
+        
+        
+        for (int i =0; i<5; i++){
+            //Realizando input do usuário
+            System.out.print("Digite um número inteiro: ");
+            int numero = entrada.nextInt();
+            
+            //Adicionando número ao ArrayList
+            numeros.add(numero);
+            
+            //Pulando uma linha para deixar o código mais legível
+            System.out.println();
+        
+        }
+        
+        //Imprimindo valores lista de números na tela
+        System.out.println("Os números informados foram: " + numeros);
+        
+       
+    }
+}

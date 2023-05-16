@@ -1,0 +1,44 @@
+import java.util.*;
+import java.util.Collections;
+
+
+public class MyClass {
+    public static void main(String args[]) {
+      
+        // Criando ArrayList()
+        List<Integer> lista = new ArrayList<Integer>();
+          
+        //Adicionando elementos no ArrayList  
+        lista.add(9);
+        lista.add(8);
+        lista.add(7);
+        lista.add(6);
+        
+        //Printando lista
+        System.out.println("Todos elemmentos: "+lista);
+          
+        //Criando variável com o tamanho da lista
+        int tamanho = lista.size();
+          
+        //Printando o tamanho da lista
+        System.out.println("Tamanho total dos elementos: " + tamanho);
+        
+        //Atribuindo maior valor da lista à uma variável
+        int maior = Collections.max(lista);
+        
+        //Imprimindo maior valor da lista de números
+        System.out.println("O maior número da lista é: " + maior);
+        
+        //Imprimindo o menor valor de uma lista
+         
+         
+        //Atribuindo menor valor da lista à uma variável
+        int menor = Collections.min(lista);
+        
+        //Imprimindo menor valor da lista de números
+        System.out.println("O menor número da lista é: " + menor);
+
+      
+      
+    }
+}
