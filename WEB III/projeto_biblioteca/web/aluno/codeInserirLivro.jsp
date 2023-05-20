@@ -10,53 +10,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+                <link rel="stylesheet" type="text/css" href="../estilos/estiloAlunoPages.css">
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Retorno da inserção do aluno</title>
-        
-        <style>
-            body {
-                background-color: #f2f2f2;
-                font-family: Arial, sans-serif;
-                text-align: center;
-                padding-top: 50px;
-            }
-            
-            .message-container {
-                background-color: #ffffff;
-                border-radius: 5px;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-                max-width: 400px;
-                margin: 0 auto;
-                padding: 20px;
-            }
-            
-            .message-text {
-                margin-bottom: 20px;
-                color: #333333;
-                font-size: 18px;
-            }
-            
-            .button-container {
-                display: flex;
-                justify-content: center;
-            }
-            
-            .button {
-                padding: 10px 20px;
-                background-color: #337ab7;
-                color: #ffffff;
-                border: none;
-                border-radius: 3px;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
-                font-size: 16px;
-                text-decoration: none;
-            }
-            
-            .button:hover {
-                background-color: #23527c;
-            }
-        </style>
+       
     </head>
     <body>
 
