@@ -40,7 +40,7 @@ public class AlunoDAO {
         // ATENÇÃO: necessário colocar todos os campos que
         // não possuem auto_increment, para pegar do input do usuário através da página JSP
         // e passar para as variáveis ainda não declaradas.
-        String sql = "INSERT INTO aluno (nome, sobrenome, telefone, email, curso, cpf) values (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO aluno (nome, sobrenome, telefone, email, curso, cpf) VALUES (?, ?, ?, ?, ?, ?)";
 
         // Passando a função de conexão com o banco de dados criada na classe ConexaoDAO para
         // a variável con criada acima, para que a função CadastrarCliente funcione direito
@@ -138,4 +138,42 @@ public class AlunoDAO {
 
     }
 
+    // Criando método do tipo VOID (não retorna nada quando chamado)
+    // para excluir um aluno. Coloquei como parâmetro padrão do método um objeto
+    // do tipo AlunoDTO que será a classe de onde as informações do aluno
+    // serão puxadas.
+    public void ExcluirAluno(AlunoDTO objAlunoDTO) throws ClassNotFoundException {
+
+        // Criando variável com comando SQL necessário para
+        // excluir um aluno na tabela
+
+        String sql = "DELETE FROM aluno WHERE id = ?";
+
+        // Passando a função de conexão com o banco de dados criada na classe ConexaoDAO para
+        // a variável con criada acima, para que a função funcione direito
+        con = new ConexaoDAO().conexaoBD();
+
+        try {
+
+            // Atribuindo à variável pstm a conexão com sql (a partir da variável con)
+            // e passando em seguida o comando sql criado acima
+            pstm = con.prepareStatement(sql);
+
+            // Passando o campo de id para o banco de dados filtrar
+            // apenas o aluno selecionado
+            pstm.setInt(1, objAlunoDTO.getId());
+
+            // Executando o código preparado acima
+            pstm.execute();
+
+            // Fechando a conexão e codificação
+            pstm.close();
+
+        } catch (SQLException e) {
+
+            System.err.println(e);
+
+        }
+
+    }
 }

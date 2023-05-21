@@ -6,7 +6,6 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="../estilos/estiloAlunoPages.css">
-
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
@@ -22,6 +21,8 @@
                     <th>Telefone</th>
                     <th>Email</th>
                     <th>Curso</th>
+                    <th>Alterar</th>
+                    <th>Excluir</th>
                 </tr>
                 <%
                     try {
@@ -37,6 +38,27 @@
                     <td><%= lista.get(num).getTelefone()%></td>
                     <td><%= lista.get(num).getEmail()%></td>
                     <td><%= lista.get(num).getCurso()%></td>
+
+                    <!-- No código abaixo estou passando as informações da lista 
+                    para a outra página a partir do clique do usuário no link--> 
+                    <td><a href="formAlterarAluno.jsp?id=<%= lista.get(num).getId()%>
+                           &nome=<%= lista.get(num).getNome()%>
+                           &sobrenome=<%= lista.get(num).getSobrenome()%>
+                           &cpf=<%=lista.get(num).getCpf()%>
+                           &telefone=<%= lista.get(num).getTelefone()%>
+                           &email=<%= lista.get(num).getEmail()%>
+                           &curso=<%= lista.get(num).getCurso()%>">Alterar</a></td>
+                           
+                    <!-- No código abaixo estou passando as informações da lista 
+                    para a outra página a partir do clique do usuário no link--> 
+                    <td><a href="formExcluirAluno.jsp?id=<%= lista.get(num).getId()%>
+                           &nome=<%= lista.get(num).getNome()%>
+                           &sobrenome=<%= lista.get(num).getSobrenome()%>
+                           &cpf=<%=lista.get(num).getCpf()%>
+                           &telefone=<%= lista.get(num).getTelefone()%>
+                           &email=<%= lista.get(num).getEmail()%>
+                           &curso=<%= lista.get(num).getCurso()%>">Excluir</a></td>
+
                 </tr>
                 <%
                         }

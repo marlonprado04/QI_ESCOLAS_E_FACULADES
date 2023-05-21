@@ -1,8 +1,3 @@
-<%-- 
-    Document   : inserirLivro
-    Created on : 19 de mai. de 2023, 20:53:00
-    Author     : marlo
---%>
 
 <%@page import="modeloDAO.AlunoDAO"%>
 <%@page import="modeloDTO.AlunoDTO"%>
@@ -10,7 +5,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-                <link rel="stylesheet" type="text/css" href="../estilos/estiloAlunoPages.css">
+        <link rel="stylesheet" type="text/css" href="../estilos/estiloAlunoPages.css">
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Retorno da inserção do aluno</title>
@@ -35,7 +30,7 @@
                 // no banco de dados a partir da classe ALUNODTO
                 AlunoDAO objAlunoDAO = new AlunoDAO();
 
-                // Cadastrando livro a partir da função CADASTRARALUNO dentro classe ALINODAO
+                // Cadastrando aluno a partir da função CADASTRARALUNO dentro classe ALINODAO
                 // isso tudo pegando os parâmetros da classe ALUNODTO
                 objAlunoDAO.CadastrarAluno(objAlunoDTO);
                 

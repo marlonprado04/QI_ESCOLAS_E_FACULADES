@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="form-row form-button-container">
-                    <button class="form-button" type="submit">Enviar</button>
+                    <button class="form-button" type="submit" onclick="location.href = 'codeInserirAluno.jsp'">Enviar</button>
                     <button class="form-button" type="button" onclick="location.href = 'codeListarAluno.jsp'">Listar Alunos</button>
                 </div>
             </div>
