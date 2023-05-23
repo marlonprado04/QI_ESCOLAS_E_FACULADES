@@ -25,7 +25,7 @@ public class AlunoDAO {
     // com os dados do banco de dados 
     ResultSet rs;
 
-    //Criando variável do tipo arraylist para colocar a lista de alunos
+    //Criando variável do tipo arraylist para colocar a lista de ALUNOS
     // extraída do banco de dados a partir do resultset
     ArrayList<AlunoDTO> lista = new ArrayList<>();
 
@@ -146,7 +146,6 @@ public class AlunoDAO {
 
         // Criando variável com comando SQL necessário para
         // excluir um aluno na tabela
-
         String sql = "DELETE FROM aluno WHERE id = ?";
 
         // Passando a função de conexão com o banco de dados criada na classe ConexaoDAO para
@@ -162,6 +161,53 @@ public class AlunoDAO {
             // Passando o campo de id para o banco de dados filtrar
             // apenas o aluno selecionado
             pstm.setInt(1, objAlunoDTO.getId());
+
+            // Executando o código preparado acima
+            pstm.execute();
+
+            // Fechando a conexão e codificação
+            pstm.close();
+
+        } catch (SQLException e) {
+
+            System.err.println(e);
+
+        }
+
+    }
+
+    // Criando método do tipo VOID (não retorna nada quando chamado)
+    // para ALTERAR um ALUNO. Coloquei como parâmetro padrão do método um objeto
+    // do tipo ALUNODTO que será a classe de onde as informações do ALUNO
+    // serão puxadas.
+    public void AlterarAluno(AlunoDTO objAlunoDTO) throws ClassNotFoundException {
+
+        // Criando variável com comando SQL necessário para
+        // ALTERAR um ALUNO na tabela
+        String sql = "UPDATE aluno SET nome = ?, sobrenome = ?, cpf = ?, telefone = ?, email = ?, curso = ? WHERE id = ?";
+
+        // Passando a função de conexão com o banco de dados criada na classe CONEXAODAO para
+        // a variável con criada acima, para que a função funcione direito
+        con = new ConexaoDAO().conexaoBD();
+
+        try {
+
+            // Atribuindo à variável pstm a conexão com sql (a partir da variável con)
+            // e passando em seguida o comando sql criado acima
+            pstm = con.prepareStatement(sql);
+
+            // Passando os campos ATUALIZADOS do ALUNO pegos a partir da classe
+            // ALUNODTO que possuem os dados a serem transferidos
+            pstm.setString(1, objAlunoDTO.getNome());
+            pstm.setString(2, objAlunoDTO.getSobrenome());
+            pstm.setString(3, objAlunoDTO.getCpf());
+            pstm.setString(4, objAlunoDTO.getTelefone());
+            pstm.setString(5, objAlunoDTO.getEmail());
+            pstm.setString(6, objAlunoDTO.getCurso());
+
+            // Passando o id para o banco de dados filtrar
+            // apenas o ALUNO selecionado
+            pstm.setInt(7, objAlunoDTO.getId());
 
             // Executando o código preparado acima
             pstm.execute();

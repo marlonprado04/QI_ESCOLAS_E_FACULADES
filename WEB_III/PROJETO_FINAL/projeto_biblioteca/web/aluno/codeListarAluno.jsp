@@ -5,13 +5,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="../estilos/estiloAlunoPages.css">
+        <link rel="stylesheet" type="text/css" href="../estilos/style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
     <body>
         <div class="container">
-            <h1>Lista de Alunos</h1>
+            <h1 class="form-title">Lista de Alunos</h1>
             <table class="table">
                 <tr>
                     <th>Código</th>
