@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="../estilos/style.css">
+        <link rel="stylesheet" type="text/css" href="../estilos/estiloAlunoPages.css">
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Retorno da inserção do aluno</title>
@@ -37,33 +37,16 @@
                 //Printando na tela a informação de que o aluno foi cadastrado com sucesso
                 out.println("<div class='message-container'>");
                 out.println("<p class='message-text'>Aluno cadastrado com sucesso!</p>");
-                
-                // Botão de voltar ao formulário de insersão
                 out.println("<div class='button-container'>");
                 out.println("<a class='button' href='formInserirAluno.jsp'>Ir para o formulário</a>");
-                out.println("</div>");
-                out.println("</div>");
-
-                // Botão de voltar para listagem
-                out.println("<div class='button-container'>");
-                out.println("<a class='button' href='codeListarAluno.jsp'>Ir para lista</a>");
                 out.println("</div>");
                 out.println("</div>");
                 
             } catch (Exception e) {
-                // Printando mensagem de aluno não cadastrado
                 out.println("<div class='message-container'>");
                 out.println("<p class='message-text'>Aluno não cadastrado devido a algum erro!</p>");
-                
-                // Botão de voltar ao formulário de insersão
                 out.println("<div class='button-container'>");
                 out.println("<a class='button' href='formInserirAluno.jsp'>Ir para o formulário</a>");
-                out.println("</div>");
-                out.println("</div>");
-
-                // Botão de voltar para listagem
-                out.println("<div class='button-container'>");
-                out.println("<a class='button' href='codeListarAluno.jsp'>Ir para lista</a>");
                 out.println("</div>");
                 out.println("</div>");
             }

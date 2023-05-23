@@ -11,8 +11,6 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="../estilos/style.css">
-
         <title>JSP Page</title>
     </head>
     <body>
@@ -33,25 +31,12 @@
                 // isso tudo pegando os parâmetros da classe ALUNODTO
                 objAlunoDAO.ExcluirAluno(objAlunoDTO);
 
-                // Criando container para os botões de navegação
-                out.println("<div class='code-button-container'>");
-
                 //Printando na tela a informação de que o aluno foi cadastrado com sucesso
                 out.println("<div class='message-container'>");
                 out.println("<p class='message-text'>Aluno excluído com sucesso!</p>");
-
-                // Botão de voltar ao formulário de insersão
                 out.println("<div class='button-container'>");
                 out.println("<a class='button' href='formInserirAluno.jsp'>Ir para o formulário</a>");
                 out.println("</div>");
-                out.println("</div>");
-
-                // Botão de voltar para listagem
-                out.println("<div class='button-container'>");
-                out.println("<a class='button' href='codeListarAluno.jsp'>Ir para lista</a>");
-                out.println("</div>");
-                out.println("</div>");
-
                 out.println("</div>");
 
             } catch (Exception e) {
@@ -59,19 +44,10 @@
                 AlunoDTO objAlunoDTO = new AlunoDTO();
                 objAlunoDTO.setId(Integer.parseInt(request.getParameter("id").trim()));
 
-                // Mensagem de aluno não excluído corretamente
                 out.println("<div class='message-container'>");
                 out.println("<p class='message-text'>Aluno não excluído devido a algum erro!</p>");
-
-                // Botão de voltar ao formulário de insersão
                 out.println("<div class='button-container'>");
                 out.println("<a class='button' href='formInserirAluno.jsp'>Ir para o formulário</a>");
-                out.println("</div>");
-                out.println("</div>");
-
-                // Botão de voltar para listagem
-                out.println("<div class='button-container'>");
-                out.println("<a class='button' href='codeListarAluno.jsp'>Ir para lista</a>");
                 out.println("</div>");
                 out.println("</div>");
             }
