@@ -11,7 +11,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<<<<<<< HEAD
         <link rel="stylesheet" type="text/css" href="../estilos/estiloAlunoPages.css">
+=======
+        <link rel="stylesheet" type="text/css" href="../estilos/style.css">
+>>>>>>> parent of 2bfd3af (recuperacao das mudancas)
 
         <title>JSP Page</title>
     </head>

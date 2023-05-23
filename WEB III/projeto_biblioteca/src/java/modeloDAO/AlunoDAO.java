@@ -146,6 +146,7 @@ public class AlunoDAO {
 
         // Criando variável com comando SQL necessário para
         // excluir um aluno na tabela
+
         String sql = "DELETE FROM aluno WHERE id = ?";
 
         // Passando a função de conexão com o banco de dados criada na classe ConexaoDAO para
@@ -175,51 +176,4 @@ public class AlunoDAO {
         }
 
     }
-
-    // Criando método do tipo VOID (não retorna nada quando chamado)
-    // para ALTERAR um aluno. Coloquei como parâmetro padrão do método um objeto
-    // do tipo ALUNODTO que será a classe de onde as informações do aluno
-    // serão puxadas.
-    public void AlterarAluno(AlunoDTO objAlunoDTO) throws ClassNotFoundException {
-
-        // Criando variável com comando SQL necessário para
-        // ALTERAR um aluno na tabela
-        String sql = "UPDATE aluno SET nome = ?, sobrenome = ?, cpf = ?, telefone = ?, email = ?, curso = ? WHERE id = ?";
-
-        // Passando a função de conexão com o banco de dados criada na classe ConexaoDAO para
-        // a variável con criada acima, para que a função funcione direito
-        con = new ConexaoDAO().conexaoBD();
-
-        try {
-
-            // Atribuindo à variável pstm a conexão com sql (a partir da variável con)
-            // e passando em seguida o comando sql criado acima
-            pstm = con.prepareStatement(sql);
-
-            // Passando os valores do campo atualizados
-            pstm.setString(1, objAlunoDTO.getNome());
-            pstm.setString(2, objAlunoDTO.getSobrenome());
-            pstm.setString(3, objAlunoDTO.getCpf());
-            pstm.setString(4, objAlunoDTO.getTelefone());
-            pstm.setString(5, objAlunoDTO.getEmail());
-            pstm.setString(6, objAlunoDTO.getCurso());
-
-            // Passando o id para o banco de dados filtrar
-            // apenas o aluno selecionado
-            pstm.setInt(7, objAlunoDTO.getId());
-
-            // Executando o código preparado acima
-            pstm.execute();
-
-            // Fechando a conexão e codificação
-            pstm.close();
-
-        } catch (SQLException e) {
-
-            System.err.println(e);
-
-        }
-
-    }
-
 }
