@@ -58,6 +58,7 @@ body {
     border-radius: 3px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+
 }
 
 .form-button:hover {
@@ -67,6 +68,13 @@ body {
 .form-button-container {
     display: flex;
     justify-content: space-between;
+}
+
+.code-button-container {
+    max-width: 600px;
+    max-height: 300px;
+
+
 }
 
 .container {
@@ -80,15 +88,19 @@ body {
     margin-bottom: 20px;
 }
 
-.table th,
 .table td {
     padding: 8px;
-    text-align: left;
+    text-align: center;
     border-bottom: 1px solid #ddd;
 }
 
 .table th {
     background-color: #f2f2f2;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background:lightgray;
 }
 
 .button-container {
@@ -103,6 +115,7 @@ body {
     border-radius: 3px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    text-decoration: none;
 }
 
 .button:hover {
