@@ -5,13 +5,13 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<link rel="stylesheet" type="text/css" href="../estilos/estiloAlunoPages.css">
+<link rel="stylesheet" type="text/css" href="../estilos/style.css">
 
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="../estilos/estiloAlunoPages.css">
+        <link rel="stylesheet" type="text/css" href="../estilos/style.css">
 
         <title>JSP Page</title>
     </head>

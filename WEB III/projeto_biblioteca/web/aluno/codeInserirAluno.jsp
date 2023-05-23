@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="../estilos/estiloAlunoPages.css">
+        <link rel="stylesheet" type="text/css" href="../estilos/style.css">
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Retorno da inserção do aluno</title>
