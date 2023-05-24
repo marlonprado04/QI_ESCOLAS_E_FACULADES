@@ -101,6 +101,7 @@ body {
 
 tr:nth-child(even) {
     background:lightgray;
+    border-width:1px;
 }
 
 .button-container {

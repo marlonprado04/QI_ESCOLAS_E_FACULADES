@@ -222,4 +222,133 @@ public class AlunoDAO {
 
     }
 
+    // Criando método do tipo arraylist que retorna um array quando chamado
+    // para listar todos os alunos com cpf consultado
+    public ArrayList<AlunoDTO> ConsultarPorCpf(String cpf) throws ClassNotFoundException {
+
+        // Criando variável com comando SQL necessário para
+        // listar os alunos filtrados       
+        String sql = "SELECT * FROM aluno WHERE cpf = ?;";
+
+        // Passando a função de conexão com o banco de dados criada na classe ConexaoDAO para
+        // a variável con criada acima, para que a função funcione direito
+        con = new ConexaoDAO().conexaoBD();
+
+        try {
+
+            // Atribuindo à variável pstm a conexão com sql (a partir da variável con)
+            // e passando em seguida o comando sql criado acima
+            pstm = con.prepareStatement(sql);
+
+            // Passando informação de qual CPF filtrar
+            pstm.setString(1, cpf);
+
+            // Como o comando em sql acima retorna uma seleção, é necessário
+            // trabalhar com a variável do tipo ResultSet, que vai armazenar
+            // os dados da seleção.
+            // Abaixo estou passando o resultado do pstm para essa 
+            // variável do tipo ResultSet
+            rs = pstm.executeQuery();
+
+            // Criando laço de repetição para varrer o resultado
+            // do select do banco de dados até pegar o último elemento            
+            while (rs.next()) {
+                // Criando objeto para acessar as informações do aluno
+                AlunoDTO objAlunoDTO = new AlunoDTO();
+
+                // Passando as informações do aluno extraídas do banco de dados
+                // para a classe AlunoDTO 
+                objAlunoDTO.setId(rs.getInt("id"));
+                objAlunoDTO.setNome(rs.getString("nome"));
+                objAlunoDTO.setSobrenome(rs.getString("sobrenome"));
+                objAlunoDTO.setTelefone(rs.getString("telefone"));
+                objAlunoDTO.setEmail(rs.getString("email"));
+                objAlunoDTO.setCurso(rs.getString("curso"));
+                objAlunoDTO.setCpf(rs.getString("cpf"));
+
+                // Adicionando as informações do aluno para a variável
+                // lista criada acima
+                lista.add(objAlunoDTO);
+
+            }
+
+            // Executando o código preparado acima
+            pstm.execute();
+
+            // Fechando a conexão e codificação
+            pstm.close();
+
+        } catch (SQLException e) {
+            System.out.println(e);
+
+        }
+
+        return lista;
+
+    }
+
+    // Criando método do tipo arraylist que retorna um array quando chamado
+    // para listar todos os alunos com cpf consultado
+    public ArrayList<AlunoDTO> ConsultarPorEmail(String email) throws ClassNotFoundException {
+
+        // Criando variável com comando SQL necessário para
+        // listar os alunos filtrados       
+        String sql = "SELECT * FROM aluno WHERE email = ?;";
+
+        // Passando a função de conexão com o banco de dados criada na classe ConexaoDAO para
+        // a variável con criada acima, para que a função funcione direito
+        con = new ConexaoDAO().conexaoBD();
+
+        try {
+
+            // Atribuindo à variável pstm a conexão com sql (a partir da variável con)
+            // e passando em seguida o comando sql criado acima
+            pstm = con.prepareStatement(sql);
+
+            // Passando informação de qual CPF filtrar
+            pstm.setString(1, email);
+
+            // Como o comando em sql acima retorna uma seleção, é necessário
+            // trabalhar com a variável do tipo ResultSet, que vai armazenar
+            // os dados da seleção.
+            // Abaixo estou passando o resultado do pstm para essa 
+            // variável do tipo ResultSet
+            rs = pstm.executeQuery();
+
+            // Criando laço de repetição para varrer o resultado
+            // do select do banco de dados até pegar o último elemento            
+            while (rs.next()) {
+                // Criando objeto para acessar as informações do aluno
+                AlunoDTO objAlunoDTO = new AlunoDTO();
+
+                // Passando as informações do aluno extraídas do banco de dados
+                // para a classe AlunoDTO 
+                objAlunoDTO.setId(rs.getInt("id"));
+                objAlunoDTO.setNome(rs.getString("nome"));
+                objAlunoDTO.setSobrenome(rs.getString("sobrenome"));
+                objAlunoDTO.setTelefone(rs.getString("telefone"));
+                objAlunoDTO.setEmail(rs.getString("email"));
+                objAlunoDTO.setCurso(rs.getString("curso"));
+                objAlunoDTO.setCpf(rs.getString("cpf"));
+
+                // Adicionando as informações do aluno para a variável
+                // lista criada acima
+                lista.add(objAlunoDTO);
+
+            }
+
+            // Executando o código preparado acima
+            pstm.execute();
+
+            // Fechando a conexão e codificação
+            pstm.close();
+
+        } catch (SQLException e) {
+            System.out.println(e);
+
+        }
+
+        return lista;
+
+    }
 }
