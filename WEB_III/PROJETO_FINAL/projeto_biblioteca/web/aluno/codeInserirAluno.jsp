@@ -9,7 +9,7 @@
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Retorno da inserção do aluno</title>
-       
+
     </head>
     <body>
 
@@ -33,20 +33,29 @@
                 // Cadastrando aluno a partir da função CADASTRARALUNO dentro classe ALINODAO
                 // isso tudo pegando os parâmetros da classe ALUNODTO
                 objAlunoDAO.CadastrarAluno(objAlunoDTO);
-                
+
                 //Printando na tela a informação de que o aluno foi cadastrado com sucesso
                 out.println("<div class='message-container'>");
                 out.println("<p class='message-text'>Aluno cadastrado com sucesso!</p>");
+                out.println("<div class='button-row'>");
                 out.println("<div class='button-container'>");
                 out.println("<a class='button' href='formInserirAluno.jsp'>Ir para o formulário</a>");
                 out.println("</div>");
+                out.println("<div class='button-container'>");
+                out.println("<a class='button' href='codeListarAluno.jsp'>Ir para lista de alunos</a>");
                 out.println("</div>");
-                
+                out.println("</div>");
+
             } catch (Exception e) {
                 out.println("<div class='message-container'>");
                 out.println("<p class='message-text'>Aluno não cadastrado devido a algum erro!</p>");
+                out.println("<div class='button-row'>");
                 out.println("<div class='button-container'>");
                 out.println("<a class='button' href='formInserirAluno.jsp'>Ir para o formulário</a>");
+                out.println("</div>");
+                out.println("<div class='button-container'>");
+                out.println("<a class='button' href='codeListarAluno.jsp'>Ir para lista de alunos</a>");
+                out.println("</div>");
                 out.println("</div>");
                 out.println("</div>");
             }

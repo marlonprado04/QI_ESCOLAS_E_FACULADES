@@ -112,6 +112,7 @@ body {
 
 .button-container {
     text-align: center;
+    margin-right: 10px;
 }
 
 .button {
@@ -123,9 +124,16 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-decoration: none;
-    
 }
 
 .button:hover {
-    background-color: #23527c;
+    background-color: #286090;
+}
+
+.button-row {
+    display: flex;
+}
+
+.button-container {
+    margin-right: 10px;
 }

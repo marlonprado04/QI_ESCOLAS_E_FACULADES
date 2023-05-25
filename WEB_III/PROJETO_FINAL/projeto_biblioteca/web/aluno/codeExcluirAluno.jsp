@@ -32,11 +32,15 @@
                 // isso tudo pegando os parâmetros da classe ALUNODTO
                 objAlunoDAO.ExcluirAluno(objAlunoDTO);
 
-                //Printando na tela a informação de que o aluno foi cadastrado com sucesso
+                //Printando na tela a informação de que o aluno foi excluído com sucesso
                 out.println("<div class='message-container'>");
                 out.println("<p class='message-text'>Aluno excluído com sucesso!</p>");
+                out.println("<div class='button-row'>");
                 out.println("<div class='button-container'>");
                 out.println("<a class='button' href='formInserirAluno.jsp'>Ir para o formulário</a>");
+                out.println("</div>");
+                out.println("<div class='button-container'>");
+                out.println("<a class='button' href='codeListarAluno.jsp'>Ir para lista de alunos</a>");
                 out.println("</div>");
                 out.println("</div>");
 
@@ -45,10 +49,15 @@
                 AlunoDTO objAlunoDTO = new AlunoDTO();
                 objAlunoDTO.setId(Integer.parseInt(request.getParameter("id").trim()));
 
+                //Printando na tela a informação de que o aluno foi não foi excluído 
                 out.println("<div class='message-container'>");
-                out.println("<p class='message-text'>Aluno não excluído devido a algum erro!</p>");
+                out.println("<p class='message-text'>Aluno não excluído devido algum erro!</p>");
+                out.println("<div class='button-row'>");
                 out.println("<div class='button-container'>");
                 out.println("<a class='button' href='formInserirAluno.jsp'>Ir para o formulário</a>");
+                out.println("</div>");
+                out.println("<div class='button-container'>");
+                out.println("<a class='button' href='codeListarAluno.jsp'>Ir para lista de alunos</a>");
                 out.println("</div>");
                 out.println("</div>");
             }
