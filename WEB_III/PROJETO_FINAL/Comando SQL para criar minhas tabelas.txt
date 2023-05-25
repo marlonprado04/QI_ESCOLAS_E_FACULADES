@@ -15,6 +15,12 @@ CREATE TABLE aluno(
     curso VARCHAR(50) NOT NULL
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
+-- Criando tabela autor
+CREATE TABLE autor(
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nome VARCHAR(100)
+) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
+
 -- Criando tabela livro
 CREATE TABLE livro(
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -25,12 +31,6 @@ CREATE TABLE livro(
     isbn VARCHAR(20) NOT NULL
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;  
 
--- Criando tabela autor
-CREATE TABLE autor(
-    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    nome VARCHAR(100)
-) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;  
-
 -- Criando tabela exemplar (podem ter vários exemplares do mesmo livro)
 CREATE TABLE exemplar(
     id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -39,14 +39,14 @@ CREATE TABLE exemplar(
     numero_do_exemplar INT(11) NOT NULL,
     status VARCHAR(20) NOT NULL
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
-    
--- Criando tabela de emprestimo
+
+-- Criando tabela emprestimo
 CREATE TABLE emprestimo(
     id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     id_exemplar INT NOT NULL,
     id_aluno INT NOT NULL,
     data_emprestimo TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
-    data_devolucao TIMESTAMP NOT NULL DEFAULT (DATE_ADD(CURRENT_TIMESTAMP(), INTERVAL 7 DAY)),
+    data_devolucao TIMESTAMP DEFAULT (DATE_ADD(CURRENT_TIMESTAMP(), INTERVAL 7 DAY)),
     CONSTRAINT fk_emprestimo_exemplar FOREIGN KEY (id_exemplar) REFERENCES exemplar(id) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT fk_emprestimo_aluno FOREIGN KEY (id_aluno) REFERENCES aluno(id) ON DELETE CASCADE ON UPDATE CASCADE    
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
@@ -58,14 +58,4 @@ CREATE TABLE livro_autor(
     id_autor INT NOT NULL,
     CONSTRAINT fk_livro_autor_livro FOREIGN KEY (id_livro) REFERENCES livro(id) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT fk_livro_autor_autor FOREIGN KEY (id_autor) REFERENCES autor(id) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
-
--- Criando a tabela de reserva
-CREATE TABLE reserva(
-    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    id_livro INT NOT NULL,
-    id_aluno INT NOT NULL, 
-    data_reserva TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT fk_reserva_livro FOREIGN KEY (id_livro) REFERENCES livro(id) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT fk_reserva_aluno FOREIGN KEY (id_aluno) REFERENCES aluno(id) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
