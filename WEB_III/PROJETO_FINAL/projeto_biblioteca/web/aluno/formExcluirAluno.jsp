@@ -15,6 +15,17 @@
     </head>
     <body>
 
+        <div class="header">
+            <h1>Biblioteca</h1>
+            <div class="menu">
+                <a href="../aluno/codeListarAluno.jsp">Alunos</a>
+                <a href="../livro/codeListarLivro.jsp">Livros</a>
+                <a href="../autor/codeListarAutor.jsp">Autores</a>
+                <a href="../exemplar/codeListarExemplar.jsp">Exemplares</a>
+                <a href="../emprestimo/codeListarEmprestimo.jsp">Empréstimos</a>
+            </div>
+        </div>
+
         <h1 class="form-title">Informações do aluno a ser excluído: </h1>
 
         <form action="codeExcluirAluno.jsp" method="POST">
@@ -48,14 +59,14 @@
                     <label class="form-label">Email:</label>
                     <input class="form-input" type="text" name="email" value="<%= request.getParameter("email")%>">
                 </div>
-                
-                 <div class="form-row">
+
+                <div class="form-row">
                     <label class="form-label">Curso: </label>
                     <input class="form-input" type="text" name="curso" value="<%= request.getParameter("curso")%>">
                 </div>
 
                 <div class="form-button-container">
-                    <button class="form-button" type="submit" onclick="location.href='codeExcluirAluno.jsp'">Excluir aluno</button>
+                    <button class="form-button" type="submit" onclick="location.href = 'codeExcluirAluno.jsp'">Excluir aluno</button>
                     <button class="form-button" type="button" onclick="location.href = 'codeListarAluno.jsp'">Listar Alunos</button>
                 </div>
             </div>

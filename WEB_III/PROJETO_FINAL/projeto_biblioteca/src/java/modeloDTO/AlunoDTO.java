@@ -1,7 +1,7 @@
-
 package modeloDTO;
 
 public class AlunoDTO {
+
     private int id;
     private String nome;
     private String sobrenome;
@@ -65,6 +65,5 @@ public class AlunoDTO {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-    
-    
+
 }

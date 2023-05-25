@@ -14,8 +14,11 @@
         <div class="header">
             <h1>Biblioteca</h1>
             <div class="menu">
-                <a href="livros.jsp">Livros</a>
-                <a href="reserva.jsp">Reserva</a>
+                <a href="../aluno/codeListarAluno.jsp">Alunos</a>
+                <a href="../livro/codeListarLivro.jsp">Livros</a>
+                <a href="../autor/codeListarAutor.jsp">Autores</a>
+                <a href="../exemplar/codeListarExemplar.jsp">Exemplares</a>
+                <a href="../emprestimo/codeListarEmprestimo.jsp">Empréstimos</a>
             </div>
         </div>
 

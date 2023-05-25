@@ -15,6 +15,17 @@
         <title>Exclusão de aluno</title>
     </head>
     <body>
+
+        <div class="header">
+            <h1>Biblioteca</h1>
+            <div class="menu">
+                <a href="../aluno/codeListarAluno.jsp">Alunos</a>
+                <a href="../livro/codeListarLivro.jsp">Livros</a>
+                <a href="../autor/codeListarAutor.jsp">Autores</a>
+                <a href="../exemplar/codeListarExemplar.jsp">Exemplares</a>
+                <a href="../emprestimo/codeListarEmprestimo.jsp">Empréstimos</a>
+            </div>
+        </div>
         <% try {
                 // Criando objeto da classe ALUNODTO para fazer a transferência de informações
                 // do formulário para a classe ALUNO

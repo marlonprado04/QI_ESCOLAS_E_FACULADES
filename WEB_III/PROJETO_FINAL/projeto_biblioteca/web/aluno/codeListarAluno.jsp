@@ -10,6 +10,17 @@
         <title>JSP Page</title>
     </head>
     <body>
+
+        <div class="header">
+            <h1>Biblioteca</h1>
+            <div class="menu">
+                <a href="../aluno/codeListarAluno.jsp">Alunos</a>
+                <a href="../livro/codeListarLivro.jsp">Livros</a>
+                <a href="../autor/codeListarAutor.jsp">Autores</a>
+                <a href="../exemplar/codeListarExemplar.jsp">Exemplares</a>
+                <a href="../emprestimo/codeListarEmprestimo.jsp">Empréstimos</a>
+            </div>
+        </div>
         <div class="container">
             <h1 class="form-title">Lista de Alunos</h1>
             <table class="table">
@@ -48,7 +59,7 @@
                            &telefone=<%= lista.get(num).getTelefone()%>
                            &email=<%= lista.get(num).getEmail()%>
                            &curso=<%= lista.get(num).getCurso()%>">Alterar</a></td>
-                           
+
                     <!-- No código abaixo estou passando as informações da lista 
                     para a outra página a partir do clique do usuário no link--> 
                     <td><a href="formExcluirAluno.jsp?id=<%= lista.get(num).getId()%>
