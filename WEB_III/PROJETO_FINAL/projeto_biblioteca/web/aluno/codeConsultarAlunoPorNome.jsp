@@ -38,7 +38,7 @@
                 <%
                     try {
                         AlunoDAO objAlunoDAO = new AlunoDAO();
-                        ArrayList<AlunoDTO> lista = objAlunoDAO.ListarAluno();
+                        ArrayList<AlunoDTO> lista = objAlunoDAO.ConsultarAluno(request.getParameter("nome"), request.getParameter("cpf"));
                         for (int num = 0; num < lista.size(); num++) {
                 %>
                 <tr>
@@ -83,8 +83,8 @@
                 <form action="formInserirAluno.jsp">
                     <div class="form-button-container">
                         <button class="button" type="submit">Inserir novo aluno</button>
-                        <button class="form-button" type="button" onclick="location.href = 'codeListarAluno.jsp'">Listar Alunos</button>
-                        <button class="form-button" type="button" onclick="location.href = 'formConsultarAlunoPorNome.jsp'">Consultar Por Nome</button>
+                        <button class="form-button" type="button" onclick="location.href = 'codeListarAluno.jsp'">Listar alunos</button>
+                        <button class="form-button" type="button" onclick="location.href = 'formConsultarAlunoPorNome.jsp'">Consultar por nome</button>
 
                     </div>
                 </form>

@@ -222,4 +222,36 @@ public class AlunoDAO {
         }
 
     }
+
+    public ArrayList<AlunoDTO> ConsultarAluno(String nome, String cpf) throws ClassNotFoundException {
+
+        String sql = "SELECT * FROM aluno WHERE nome LIKE ?";
+
+        con = new ConexaoDAO().conexaoBD();
+
+        try {
+            pstm = con.prepareStatement(sql);
+            pstm.setString(1, "%" + nome + "%");
+            rs = pstm.executeQuery();
+
+            while (rs.next()) {
+                AlunoDTO objAlunoDTO = new AlunoDTO();
+                objAlunoDTO.setId(rs.getInt("id"));
+                objAlunoDTO.setNome(rs.getString("nome"));
+                objAlunoDTO.setSobrenome(rs.getString("sobrenome"));
+                objAlunoDTO.setTelefone(rs.getString("telefone"));
+                objAlunoDTO.setEmail(rs.getString("email"));
+                objAlunoDTO.setCurso(rs.getString("curso"));
+                objAlunoDTO.setCpf(rs.getString("cpf"));
+                lista.add(objAlunoDTO);
+            }
+
+            pstm.close();
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+        return lista;
+    }
+
 }

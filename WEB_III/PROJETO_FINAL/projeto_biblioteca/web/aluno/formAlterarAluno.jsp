@@ -32,7 +32,7 @@
             <div class="form-container">
                 <div class="form-row">
                     <label class="form-label">Código:</label>
-                    <input class="form-input" type="text" name="id" value="<%= request.getParameter("id")%>">
+                    <input class="form-input" type="text" name="id" value="<%= request.getParameter("id")%>" readonly>
                 </div>
 
                 <div class="form-row">

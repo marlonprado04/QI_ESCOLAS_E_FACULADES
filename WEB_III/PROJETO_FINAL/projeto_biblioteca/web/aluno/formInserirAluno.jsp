@@ -5,9 +5,6 @@
         <link rel="stylesheet" type="text/css" href="../estilos/style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastro de aluno</title>
-        <style>
-            <%@include file="../estilos/style.css" %>
-        </style>
     </head>
     <body>
 
@@ -58,8 +55,10 @@
                 </div>
 
                 <div class="form-button-container">
-                    <button class="form-button" type="submit">Cadastrar</button>
-                    <button class="form-button" type="button" onclick="location.href = 'codeListarAluno.jsp'">Listar Alunos</button>
+                    <button class="form-button btn-submit" type="submit">Cadastrar</button>
+                    <button class="form-button" type="button" onclick="location.href = 'codeListarAluno.jsp'">Listar alunos</button>
+                    <button class="form-button" type="button" onclick="location.href = 'formConsultarAlunoPorNome.jsp'">Consultar Por Nome</button>
+
                 </div>
             </div>
 
