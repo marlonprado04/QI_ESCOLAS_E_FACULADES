@@ -33,6 +33,7 @@
                     <th>ISBN</th>
                     <th>Alterar</th>
                     <th>Excluir</th>
+                    <th>Cadastrar Exemplar</th> <!-- Nova coluna adicionada -->
                 </tr>
                 <%
                     try {
@@ -47,9 +48,6 @@
                     <td><%= lista.get(num).getAnoPublicacao()%></td>
                     <td><%= lista.get(num).getGenero()%></td>
                     <td><%= lista.get(num).getIsbn()%></td>
-
-                    <!-- No código abaixo estou passando as informações da lista 
-                    para a outra página a partir do clique do usuário no link--> 
                     <td>
                         <a href="formAlterarLivro.jsp?id=<%= lista.get(num).getId()%>
                            &titulo=<%= lista.get(num).getTitulo()%>
@@ -58,9 +56,6 @@
                            &genero=<%= lista.get(num).getGenero()%>
                            &isbn=<%= lista.get(num).getIsbn()%>">Alterar</a>
                     </td>
-
-                    <!-- No código abaixo estou passando as informações da lista 
-                    para a outra página a partir do clique do usuário no link--> 
                     <td>
                         <a href="formExcluirLivro.jsp?id=<%= lista.get(num).getId()%>
                            &titulo=<%= lista.get(num).getTitulo()%>
@@ -69,7 +64,10 @@
                            &genero=<%= lista.get(num).getGenero()%>
                            &isbn=<%= lista.get(num).getIsbn()%>">Excluir</a>
                     </td>
-
+                    <td>
+                        <a href="../exemplar/formInserirExemplar.jsp?id_livro=<%= lista.get(num).getId()%>
+                           &titulo_livro=<%= lista.get(num).getTitulo()%>">Inserir Exemplar</a>
+                    </td>
                 </tr>
                 <%
                         }

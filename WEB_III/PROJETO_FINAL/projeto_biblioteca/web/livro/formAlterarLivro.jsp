@@ -30,13 +30,13 @@
         <form action="codeAlterarLivro.jsp" method="POST">
             <div class="form-container">
                 <div class="form-row">
-                    <label class="form-label">ID:</label>
-                    <input class="form-input" type="text" name="id" value="<%= request.getParameter("id")%>">
+                    <label class="form-label">ID do Livro:</label>
+                    <input class="form-input" type="text" name="id_livro" value="<%= request.getParameter("id_livro")%>">
                 </div>
 
                 <div class="form-row">
-                    <label class="form-label">Título:</label>
-                    <input class="form-input" type="text" name="titulo" value="<%= request.getParameter("titulo")%>">
+                    <label class="form-label">Título do Livro:</label>
+                    <input class="form-input" type="text" name="titulo_livro" value="<%= request.getParameter("titulo_livro")%>">
                 </div>
 
                 <div class="form-row">
