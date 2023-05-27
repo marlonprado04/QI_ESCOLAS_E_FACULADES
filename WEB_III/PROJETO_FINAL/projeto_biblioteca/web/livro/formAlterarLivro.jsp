@@ -31,12 +31,12 @@
             <div class="form-container">
                 <div class="form-row">
                     <label class="form-label">ID do Livro:</label>
-                    <input class="form-input" type="text" name="id_livro" value="<%= request.getParameter("id_livro")%>">
+                    <input class="form-input" type="text" name="id" value="<%= request.getParameter("id")%>" readonly>
                 </div>
 
                 <div class="form-row">
                     <label class="form-label">Título do Livro:</label>
-                    <input class="form-input" type="text" name="titulo_livro" value="<%= request.getParameter("titulo_livro")%>">
+                    <input class="form-input" type="text" name="titulo" value="<%= request.getParameter("titulo")%>">
                 </div>
 
                 <div class="form-row">
@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="form-button-container">
-                    <button class="form-button" type="submit" onclick="location.href = 'codeAlterarLivro.jsp'">Alterar livro</button>
+                    <button class="form-button" type="submit" onclick="location.href = 'codeAlterarLivro.jsp'">Realizar alteração</button>
                     <button class="form-button" type="button" onclick="location.href = 'codeListarLivro.jsp'">Listar Livros</button>
                 </div>
             </div>

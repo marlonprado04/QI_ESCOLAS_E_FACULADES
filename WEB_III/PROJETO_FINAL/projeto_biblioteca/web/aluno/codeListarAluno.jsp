@@ -82,7 +82,7 @@
             <div class="button-container">
                 <form action="formInserirAluno.jsp">
                     <div class="form-button-container">
-                        <button class="button" type="submit">Inserir novo aluno</button>
+                        <button class="form-button" type="submit">Inserir novo aluno</button>
                         <button class="form-button" type="button" onclick="location.href = 'codeListarAluno.jsp'">Listar Alunos</button>
                         <button class="form-button" type="button" onclick="location.href = 'formConsultarAlunoPorNome.jsp'">Consultar Por Nome</button>
 

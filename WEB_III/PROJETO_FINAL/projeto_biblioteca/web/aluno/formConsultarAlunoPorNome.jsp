@@ -36,7 +36,7 @@
                 </div>
                 
                 <div class="form-button-container">
-                    <button class="form-button" type="submit" onclick="location.href = 'codeConsultarAlunoPorNome.jsp'">Consultar Por Nome</button>
+                    <button class="form-button" type="submit" onclick="location.href = 'codeConsultarAlunoPorNome.jsp'">Realizar consulta</button>
                     <button class="form-button" type="button" onclick="location.href = 'codeListarAluno.jsp'">Listar Alunos</button>
                 </div>
             </div>

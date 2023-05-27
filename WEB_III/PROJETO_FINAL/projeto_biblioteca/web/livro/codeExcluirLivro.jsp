@@ -45,10 +45,10 @@
                 out.println("<p class='message-text'>Livro excluído com sucesso!</p>");
                 out.println("<div class='button-row'>");
                 out.println("<div class='button-container'>");
-                out.println("<a class='button' href='formInserirLivro.jsp'>Ir para o formulário</a>");
+                out.println("<a class='form-button' href='formInserirLivro.jsp'>Cadastrar novo livro</a>");
                 out.println("</div>");
                 out.println("<div class='button-container'>");
-                out.println("<a class='button' href='codeListarLivro.jsp'>Ir para lista de livros</a>");
+                out.println("<a class='form-button' href='codeListarLivro.jsp'>Listar livros</a>");
                 out.println("</div>");
                 out.println("</div>");
 
@@ -61,10 +61,10 @@
                 out.println("<p class='message-text'>Livro não excluído devido a algum erro!</p>");
                 out.println("<div class='button-row'>");
                 out.println("<div class='button-container'>");
-                out.println("<a class='button' href='formInserirLivro.jsp'>Ir para o formulário</a>");
+                out.println("<a class='form-button' href='formInserirLivro.jsp'>Cadastrar novo livro</a>");
                 out.println("</div>");
                 out.println("<div class='button-container'>");
-                out.println("<a class='button' href='codeListarLivro.jsp'>Ir para lista de livros</a>");
+                out.println("<a class='form-button' href='codeListarLivro.jsp'>Listar livros</a>");
                 out.println("</div>");
                 out.println("</div>");
             }

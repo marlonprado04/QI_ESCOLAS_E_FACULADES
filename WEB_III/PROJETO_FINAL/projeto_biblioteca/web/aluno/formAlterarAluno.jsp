@@ -66,7 +66,7 @@
                 </div>
 
                 <div class="form-button-container">
-                    <button class="form-button" type="submit" onclick="location.href = 'codeAlterarAluno.jsp'">Alterar aluno</button>
+                    <button class="form-button" type="submit" onclick="location.href = 'codeAlterarAluno.jsp'">Realizar alteração</button>
                     <button class="form-button" type="button" onclick="location.href = 'codeListarAluno.jsp'">Listar Alunos</button>
                 </div>
             </div>

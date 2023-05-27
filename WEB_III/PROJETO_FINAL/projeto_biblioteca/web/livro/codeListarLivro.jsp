@@ -31,9 +31,11 @@
                     <th>Ano de Publicação</th>
                     <th>Gênero</th>
                     <th>ISBN</th>
+                    <th>Listar exemplares</th>
+                    <th>Cadastrar exemplar</th>
                     <th>Alterar</th>
                     <th>Excluir</th>
-                    <th>Cadastrar Exemplar</th> <!-- Nova coluna adicionada -->
+
                 </tr>
                 <%
                     try {
@@ -48,6 +50,14 @@
                     <td><%= lista.get(num).getAnoPublicacao()%></td>
                     <td><%= lista.get(num).getGenero()%></td>
                     <td><%= lista.get(num).getIsbn()%></td>
+
+                    <td>
+                        <a href="../exemplar/codeListarExemplar.jsp">Listar</a>
+                    </td>
+                    <td>
+                        <a href="../exemplar/formInserirExemplar.jsp?id_livro=<%= lista.get(num).getId()%>
+                           &titulo_livro=<%= lista.get(num).getTitulo()%>">Inserir</a>
+                    </td>
                     <td>
                         <a href="formAlterarLivro.jsp?id=<%= lista.get(num).getId()%>
                            &titulo=<%= lista.get(num).getTitulo()%>
@@ -64,10 +74,7 @@
                            &genero=<%= lista.get(num).getGenero()%>
                            &isbn=<%= lista.get(num).getIsbn()%>">Excluir</a>
                     </td>
-                    <td>
-                        <a href="../exemplar/formInserirExemplar.jsp?id_livro=<%= lista.get(num).getId()%>
-                           &titulo_livro=<%= lista.get(num).getTitulo()%>">Inserir Exemplar</a>
-                    </td>
+
                 </tr>
                 <%
                         }
@@ -79,7 +86,7 @@
 
             <div class="button-container">
                 <form action="formInserirLivro.jsp">
-                    <button class="button" type="submit">Inserir novo livro</button>
+                    <button class="form-button" type="submit">Inserir novo livro</button>
                 </form>
             </div>
         </div>

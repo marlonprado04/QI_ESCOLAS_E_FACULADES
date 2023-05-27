@@ -48,25 +48,22 @@
                 out.println("<p class='message-text'>Livro alterado com sucesso!</p>");
                 out.println("<div class='button-row'>");
                 out.println("<div class='button-container'>");
-                out.println("<a class='button' href='formInserirLivro.jsp'>Ir para o formulário</a>");
+                out.println("<a class='form-button' href='formInserirLivro.jsp'>Inserir novo livro</a>");
                 out.println("</div>");
                 out.println("<div class='button-container'>");
-                out.println("<a class='button' href='codeListarLivro.jsp'>Ir para lista de livros</a>");
+                out.println("<a class='form-button' href='codeListarLivro.jsp'>Listar livros</a>");
                 out.println("</div>");
                 out.println("</div>");
             } catch (Exception e) {
-                LivroDTO objLivroDTO = new LivroDTO();
-                objLivroDTO.setId(Integer.parseInt(request.getParameter("id").trim()));
-
                 // Printando na tela a informação de que o livro não foi alterado devido a algum erro
                 out.println("<div class='message-container'>");
                 out.println("<p class='message-text'>Livro não alterado devido a algum erro!</p>");
                 out.println("<div class='button-row'>");
                 out.println("<div class='button-container'>");
-                out.println("<a class='button' href='formInserirLivro.jsp'>Ir para o formulário</a>");
+                out.println("<a class='form-button' href='formInserirLivro.jsp'>Cadastrar novo livro</a>");
                 out.println("</div>");
                 out.println("<div class='button-container'>");
-                out.println("<a class='button' href='codeListarLivro.jsp'>Ir para lista de livros</a>");
+                out.println("<a class='form-button' href='codeListarLivro.jsp'>Listar livros</a>");
                 out.println("</div>");
             }
         %>
