@@ -17,14 +17,14 @@ public class ExemplarDAO {
     // Método para cadastrar um novo exemplar
     public void CadastrarExemplar(ExemplarDTO objExemplarDTO) throws ClassNotFoundException {
 
-        String sql = "INSERT INTO exemplar (id_livro, numero_do_exemplar, status) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO exemplar (id_livro, obs_do_exemplar, status) VALUES (?, ?, ?)";
 
         con = new ConexaoDAO().conexaoBD();
 
         try {
             pstm = con.prepareStatement(sql);
             pstm.setInt(1, objExemplarDTO.getIdLivro());
-            pstm.setInt(2, objExemplarDTO.getNumeroDoExemplar());
+            pstm.setString(2, objExemplarDTO.getObsDoExemplar());
             pstm.setString(3, objExemplarDTO.getStatus());
             pstm.execute();
             pstm.close();
@@ -49,7 +49,7 @@ public class ExemplarDAO {
                 ExemplarDTO objExemplarDTO = new ExemplarDTO();
                 objExemplarDTO.setId(rs.getInt("id"));
                 objExemplarDTO.setIdLivro(rs.getInt("id_livro"));
-                objExemplarDTO.setNumeroDoExemplar(rs.getInt("numero_do_exemplar"));
+                objExemplarDTO.setObsDoExemplar(rs.getString("obs_do_exemplar"));
                 objExemplarDTO.setStatus(rs.getString("status"));
                 lista.add(objExemplarDTO);
             }
@@ -83,14 +83,14 @@ public class ExemplarDAO {
     // Método para alterar as informações de um exemplar
     public void AlterarExemplar(ExemplarDTO objExemplarDTO) throws ClassNotFoundException {
 
-        String sql = "UPDATE exemplar SET id_livro = ?, numero_do_exemplar = ?, status = ? WHERE id = ?";
+        String sql = "UPDATE exemplar SET id_livro = ?, obs_do_exemplar = ?, status = ? WHERE id = ?";
 
         con = new ConexaoDAO().conexaoBD();
 
         try {
             pstm = con.prepareStatement(sql);
             pstm.setInt(1, objExemplarDTO.getIdLivro());
-            pstm.setInt(2, objExemplarDTO.getNumeroDoExemplar());
+            pstm.setString(2, objExemplarDTO.getObsDoExemplar());
             pstm.setString(3, objExemplarDTO.getStatus());
             pstm.setInt(4, objExemplarDTO.getId());
             pstm.execute();

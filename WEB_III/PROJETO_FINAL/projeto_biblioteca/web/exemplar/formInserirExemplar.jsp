@@ -38,8 +38,8 @@
                 </div>
 
                 <div class="form-row">
-                    <label class="form-label" for="numero_do_exemplar">Número do Exemplar:</label>
-                    <input class="form-input" type="text" id="numero_do_exemplar" name="numero_do_exemplar" placeholder="Ex: 1" required>
+                    <label class="form-label" for="obs_do_exemplar">Observação: </label>
+                    <input class="form-input" type="text" id="obs_do_exemplar" name="obs_do_exemplar" placeholder="Ex: Exemplar com assinatura" required>
                 </div>
 
                 <div class="form-row">

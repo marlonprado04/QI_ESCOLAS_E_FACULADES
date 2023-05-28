@@ -4,7 +4,7 @@ public class ExemplarDTO {
 
     private int id;
     private int idLivro;
-    private int numeroDoExemplar;
+    private String obsDoExemplar;
     private String status;
 
     public int getId() {
@@ -23,12 +23,12 @@ public class ExemplarDTO {
         this.idLivro = idLivro;
     }
 
-    public int getNumeroDoExemplar() {
-        return numeroDoExemplar;
+    public String getObsDoExemplar() {
+        return obsDoExemplar;
     }
 
-    public void setNumeroDoExemplar(int numeroDoExemplar) {
-        this.numeroDoExemplar = numeroDoExemplar;
+    public void setObsDoExemplar(String numeroDoExemplar) {
+        this.obsDoExemplar = numeroDoExemplar;
     }
 
     public String getStatus() {

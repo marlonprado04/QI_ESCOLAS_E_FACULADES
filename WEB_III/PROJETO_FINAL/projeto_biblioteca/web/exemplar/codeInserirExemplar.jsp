@@ -30,7 +30,7 @@
 
                 // Passando as informações do formulário através do comando request.getParameter
                 objExemplarDTO.setIdLivro(Integer.parseInt(request.getParameter("id_livro")));
-                objExemplarDTO.setNumeroDoExemplar(Integer.parseInt(request.getParameter("numero_do_exemplar")));
+                objExemplarDTO.setObsDoExemplar(request.getParameter("obs_do_exemplar"));
                 objExemplarDTO.setStatus(request.getParameter("status"));
 
                 // Criando objeto da classe ExemplarDAO para fazer a operação de cadastro

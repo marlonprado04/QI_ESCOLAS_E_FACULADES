@@ -36,28 +36,10 @@ CREATE TABLE exemplar(
     id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     id_livro INT NOT NULL,
     CONSTRAINT fk_exemplar_livro FOREIGN KEY (id_livro) REFERENCES livro(id) ON DELETE CASCADE ON UPDATE CASCADE,
-    numero_do_exemplar INT(11) NOT NULL,
+    obs_do_exemplar VARCHAR(200) NOT NULL,
     status VARCHAR(20) NOT NULL
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
--- Criando trigger para incrementar o campo numero_do_exemplar
-DELIMITER //
-
-CREATE TRIGGER incrementar_numero_exemplar
-BEFORE INSERT ON exemplar
-FOR EACH ROW
-BEGIN
-    DECLARE ultimo_numero INT;
-    IF NEW.id_livro = @ultimo_id_livro THEN
-        SET NEW.numero_do_exemplar = @ultimo_numero + 1;
-    ELSE
-        SET NEW.numero_do_exemplar = 1;
-    END IF;
-    SET @ultimo_id_livro = NEW.id_livro;
-    SET @ultimo_numero = NEW.numero_do_exemplar;
-END //
-
-DELIMITER ;
 
 -- Criando tabela emprestimo
 CREATE TABLE emprestimo(

@@ -45,7 +45,7 @@
                     <td><%= lista.get(num).getId()%></td>
                     <td><%= lista.get(num).getIdLivro()%></td>
                     <td><%= objLivroDAO.obterTituloLivro(lista.get(num).getIdLivro())%></td>
-                    <td><%= lista.get(num).getNumeroDoExemplar()%></td>
+                    <td><%= lista.get(num).getObsDoExemplar()%></td>
                     <td><%= lista.get(num).getStatus()%></td>
                     <td>
                         <a href="formAlterarExemplar.jsp?id=<%= lista.get(num).getId()%>">Editar</a>
