@@ -251,4 +251,36 @@ public class LivroDAO {
 
         return tituloLivro;
     }
+
+// Criando método para consultar livro por nome
+    public ArrayList<LivroDTO> ConsultarLivroPorTitulo(String titulo) throws ClassNotFoundException {
+
+        String sql = "SELECT * FROM livro WHERE titulo LIKE ?";
+
+        con = new ConexaoDAO().conexaoBD();
+
+        try {
+            pstm = con.prepareStatement(sql);
+            pstm.setString(1, "%" + titulo + "%");
+            rs = pstm.executeQuery();
+
+            while (rs.next()) {
+                LivroDTO objLivroDTO = new LivroDTO();
+                objLivroDTO.setId(rs.getInt("id"));
+                objLivroDTO.setTitulo(rs.getString("titulo"));
+                objLivroDTO.setEditora(rs.getString("editora"));
+                objLivroDTO.setAnoPublicacao(rs.getString("ano_publicacao"));
+                objLivroDTO.setGenero(rs.getString("genero"));
+                objLivroDTO.setIsbn(rs.getString("isbn"));   
+                lista.add(objLivroDTO);
+            }
+
+            pstm.close();
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+        return lista;
+    }
+
 }

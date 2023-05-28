@@ -38,7 +38,7 @@
                 <%
                     try {
                         AlunoDAO objAlunoDAO = new AlunoDAO();
-                        ArrayList<AlunoDTO> lista = objAlunoDAO.ConsultarAluno(request.getParameter("nome"), request.getParameter("cpf"));
+                        ArrayList<AlunoDTO> lista = objAlunoDAO.ConsultarAlunoPorNome(request.getParameter("nome"));
                         for (int num = 0; num < lista.size(); num++) {
                 %>
                 <tr>

@@ -223,7 +223,7 @@ public class AlunoDAO {
 
     }
 
-    public ArrayList<AlunoDTO> ConsultarAluno(String nome, String cpf) throws ClassNotFoundException {
+    public ArrayList<AlunoDTO> ConsultarAlunoPorNome(String nome) throws ClassNotFoundException {
 
         String sql = "SELECT * FROM aluno WHERE nome LIKE ?";
 

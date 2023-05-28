@@ -7,7 +7,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="../estilos/style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Lista de Livros</title>
+        <title>Consultar Livro</title>
     </head>
     <body>
 
@@ -22,25 +22,23 @@
             </div>
         </div>
         <div class="container">
-            <h1 class="form-title">Lista de Livros</h1>
+            <h1 class="form-title">Lista de livros</h1>
             <table class="table">
                 <tr>
-                    <th>ID</th>
-                    <th>Título</th>
-                    <th>Editora</th>
-                    <th>Ano de Publicação</th>
-                    <th>Gênero</th>
-                    <th>ISBN</th>
-                    <th>Cadastrar exemplar</th>
-                    <th>Listar exemplar</th>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                    <th>CPF</th>
+                    <th>Telefone</th>
+                    <th>Email</th>
+                    <th>Curso</th>
                     <th>Alterar</th>
                     <th>Excluir</th>
-
                 </tr>
                 <%
                     try {
                         LivroDAO objLivroDAO = new LivroDAO();
-                        ArrayList<LivroDTO> lista = objLivroDAO.ListarLivro();
+                        ArrayList<LivroDTO> lista = objLivroDAO.ConsultarLivroPorTitulo(request.getParameter("titulo"));
                         for (int num = 0; num < lista.size(); num++) {
                 %>
                 <tr>
@@ -90,7 +88,6 @@
                     <button class="form-button" type="button" onclick="location.href = 'formConsultarLivroPorTitulo.jsp'">Consultar Por Titulo</button>
                 </div>
             </form>
-
         </div>
     </body>
 </html>
