@@ -29,6 +29,11 @@
                     <label class="form-label" for="titulo">Título:</label>
                     <input class="form-input" type="text" id="titulo" name="titulo" placeholder="Ex: Dom Quixote" required>
                 </div>
+                
+                <div class="form-row">
+                    <label class="form-label" for="autor">Autores: </label>
+                    <input class="form-input" type="text" id="autor" name="autor" placeholder="Ex: Machado de Assis" required>
+                </div>
 
                 <div class="form-row">
                     <label class="form-label" for="editora">Editora:</label>

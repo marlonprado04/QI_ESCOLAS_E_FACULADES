@@ -29,6 +29,7 @@
 
                 // Passando as informações do formulário através do comando request.getParameter
                 objLivroDTO.setTitulo(request.getParameter("titulo"));
+                objLivroDTO.setAutor(request.getParameter("autor"));
                 objLivroDTO.setEditora(request.getParameter("editora"));
                 objLivroDTO.setAnoPublicacao(request.getParameter("ano_publicacao"));
                 objLivroDTO.setGenero(request.getParameter("genero"));

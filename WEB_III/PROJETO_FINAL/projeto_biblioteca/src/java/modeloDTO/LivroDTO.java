@@ -4,6 +4,7 @@ public class LivroDTO {
 
     private int id;
     private String titulo;
+    private String autor;
     private String editora;
     private String anoPublicacao;
     private String genero;
@@ -23,6 +24,14 @@ public class LivroDTO {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
     }
 
     public String getEditora() {

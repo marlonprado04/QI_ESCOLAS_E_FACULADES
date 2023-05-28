@@ -37,7 +37,10 @@
                     <label class="form-label">Título do Livro:</label>
                     <input class="form-input" type="text" name="titulo" value="<%= request.getParameter("titulo")%>">
                 </div>
-
+                <div class="form-row">
+                    <label class="form-label">Autores:</label>
+                    <input class="form-input" type="text" name="autor" value="<%= request.getParameter("autor")%>">
+                </div>
                 <div class="form-row">
                     <label class="form-label">Editora:</label>
                     <input class="form-input" type="text" name="editora" value="<%= request.getParameter("editora")%>">

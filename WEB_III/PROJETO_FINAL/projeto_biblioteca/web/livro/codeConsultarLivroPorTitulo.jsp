@@ -26,6 +26,7 @@
                 <tr>
                     <th>Código</th>
                     <th>Titulo</th>
+                    <th>Autores</th>
                     <th>Editora</th>
                     <th>Ano de lançamento</th>
                     <th>Gênero</th>
@@ -44,6 +45,7 @@
                 <tr>
                     <td><%= lista.get(num).getId()%></td>
                     <td><%= lista.get(num).getTitulo()%></td>
+                    <td><%= lista.get(num).getAutor()%></td>
                     <td><%= lista.get(num).getEditora()%></td>
                     <td><%= lista.get(num).getAnoPublicacao()%></td>
                     <td><%= lista.get(num).getGenero()%></td>
@@ -58,6 +60,7 @@
                     <td>
                         <a href="formAlterarLivro.jsp?id=<%= lista.get(num).getId()%>
                            &titulo=<%= lista.get(num).getTitulo()%>
+                           &autor=<%= lista.get(num).getAutor()%>
                            &editora=<%= lista.get(num).getEditora()%>
                            &ano_publicacao=<%= lista.get(num).getAnoPublicacao()%>
                            &genero=<%= lista.get(num).getGenero()%>
@@ -66,6 +69,7 @@
                     <td>
                         <a href="formExcluirLivro.jsp?id=<%= lista.get(num).getId()%>
                            &titulo=<%= lista.get(num).getTitulo()%>
+                           &autor=<%= lista.get(num).getAutor()%>
                            &editora=<%= lista.get(num).getEditora()%>
                            &ano_publicacao=<%= lista.get(num).getAnoPublicacao()%>
                            &genero=<%= lista.get(num).getGenero()%>

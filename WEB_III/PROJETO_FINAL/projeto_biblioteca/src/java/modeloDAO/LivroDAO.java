@@ -40,7 +40,7 @@ public class LivroDAO {
         // ATENÇÃO: necessário colocar todos os campos que
         // não possuem auto_increment, para pegar do input do usuário através da página JSP
         // e passar para as variáveis ainda não declaradas.
-        String sql = "INSERT INTO livro (titulo, editora, ano_publicacao, genero, isbn) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO livro (titulo, autor, editora,  ano_publicacao, genero, isbn) VALUES (?, ?, ?, ?, ?, ?)";
 
         // Passando a função de conexão com o banco de dados criada na classe ConexaoDAO para
         // a variável con criada acima, para que a função CadastrarLivro funcione direito
@@ -55,10 +55,11 @@ public class LivroDAO {
             // Passando os campos que serão inseridos no banco de dados, de acordo com o tipo
             // e sequência informada acima    
             pstm.setString(1, objLivroDTO.getTitulo());
-            pstm.setString(2, objLivroDTO.getEditora());
-            pstm.setString(3, objLivroDTO.getAnoPublicacao());
-            pstm.setString(4, objLivroDTO.getGenero());
-            pstm.setString(5, objLivroDTO.getIsbn());
+            pstm.setString(2, objLivroDTO.getAutor());
+            pstm.setString(3, objLivroDTO.getEditora());
+            pstm.setString(4, objLivroDTO.getAnoPublicacao());
+            pstm.setString(5, objLivroDTO.getGenero());
+            pstm.setString(6, objLivroDTO.getIsbn());
 
             // Executando o código preparado acima
             pstm.execute();
@@ -110,6 +111,7 @@ public class LivroDAO {
                 // para a classe LivroDTO 
                 objLivroDTO.setId(rs.getInt("id"));
                 objLivroDTO.setTitulo(rs.getString("titulo"));
+                objLivroDTO.setAutor(rs.getString("autor"));
                 objLivroDTO.setEditora(rs.getString("editora"));
                 objLivroDTO.setAnoPublicacao(rs.getString("ano_publicacao"));
                 objLivroDTO.setGenero(rs.getString("genero"));
@@ -182,7 +184,7 @@ public class LivroDAO {
 
         // Criando variável com comando SQL necessário para
         // ALTERAR um LIVRO na tabela
-        String sql = "UPDATE livro SET titulo = ?, editora = ?, ano_publicacao = ?, genero = ?, isbn = ? WHERE id = ?";
+        String sql = "UPDATE livro SET titulo = ?, autor = ?, editora = ?, ano_publicacao = ?, genero = ?, isbn = ? WHERE id = ?";
 
         // Passando a função de conexão com o banco de dados criada na classe ConexaoDAO para
         // a variável con criada acima, para que a função funcione corretamente
@@ -197,14 +199,15 @@ public class LivroDAO {
             // Passando os campos ATUALIZADOS do LIVRO pegos a partir da classe
             // LivroDTO que possuem os dados a serem transferidos
             pstm.setString(1, objLivroDTO.getTitulo());
-            pstm.setString(2, objLivroDTO.getEditora());
-            pstm.setString(3, objLivroDTO.getAnoPublicacao());
-            pstm.setString(4, objLivroDTO.getGenero());
-            pstm.setString(5, objLivroDTO.getIsbn());
+            pstm.setString(2, objLivroDTO.getAutor());
+            pstm.setString(3, objLivroDTO.getEditora());
+            pstm.setString(4, objLivroDTO.getAnoPublicacao());
+            pstm.setString(5, objLivroDTO.getGenero());
+            pstm.setString(6, objLivroDTO.getIsbn());
 
             // Passando o id para o banco de dados filtrar
             // apenas o LIVRO selecionado
-            pstm.setInt(6, objLivroDTO.getId());
+            pstm.setInt(7, objLivroDTO.getId());
 
             // Executando o código preparado acima
             pstm.execute();
@@ -268,10 +271,11 @@ public class LivroDAO {
                 LivroDTO objLivroDTO = new LivroDTO();
                 objLivroDTO.setId(rs.getInt("id"));
                 objLivroDTO.setTitulo(rs.getString("titulo"));
+                objLivroDTO.setAutor(rs.getString("autor"));
                 objLivroDTO.setEditora(rs.getString("editora"));
                 objLivroDTO.setAnoPublicacao(rs.getString("ano_publicacao"));
                 objLivroDTO.setGenero(rs.getString("genero"));
-                objLivroDTO.setIsbn(rs.getString("isbn"));   
+                objLivroDTO.setIsbn(rs.getString("isbn"));
                 lista.add(objLivroDTO);
             }
 

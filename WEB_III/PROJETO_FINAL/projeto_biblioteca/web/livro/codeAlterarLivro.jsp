@@ -29,6 +29,7 @@
                 // para ALTERAR TODOS OS CAMPOS apenas do LIVRO com o ID informado
                 objLivroDTO.setId(Integer.parseInt(request.getParameter("id").trim()));
                 objLivroDTO.setTitulo(request.getParameter("titulo"));
+                objLivroDTO.setAutor(request.getParameter("autor"));
                 objLivroDTO.setEditora(request.getParameter("editora"));
                 objLivroDTO.setAnoPublicacao(request.getParameter("ano_publicacao"));
                 objLivroDTO.setGenero(request.getParameter("genero"));
