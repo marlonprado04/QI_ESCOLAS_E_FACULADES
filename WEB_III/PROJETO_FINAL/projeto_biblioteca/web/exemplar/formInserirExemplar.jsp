@@ -15,11 +15,11 @@
         <div class="header">
             <h1>Biblioteca</h1>
             <div class="menu">
-                <a href="aluno/codeListarAluno.jsp">Alunos</a>
-                <a href="livro/codeListarLivro.jsp">Livros</a>
-                <a href="autor/codeListarAutor.jsp">Autores</a>
-                <a href="exemplar/codeListarExemplar.jsp">Exemplares</a>
-                <a href="emprestimo/codeListarEmprestimo.jsp">Empréstimos</a>
+                <a href="../aluno/codeListarAluno.jsp">Alunos</a>
+                <a href="../livro/codeListarLivro.jsp">Livros</a>
+                <a href="../autor/codeListarAutor.jsp">Autores</a>
+                <a href="../exemplar/codeListarExemplar.jsp">Exemplares</a>
+                <a href="../emprestimo/codeListarEmprestimo.jsp">Empréstimos</a>
             </div>
         </div>
 
@@ -44,10 +44,9 @@
 
                 <div class="form-row">
                     <label class="form-label" for="status">Status:</label>
-                    <select class="form-input" id="status" name="status" required>
-                        <option value="" disabled selected>Selecione o status</option>
-                        <option value="Disponível">Disponível</option>
-                        <option value="Emprestado">Emprestado</option>
+                    <select class="form-input" id="status" name="status" readonly required>
+                        <option value="" disabled readonly>Selecione o status</option>
+                        <option value="Disponível" selected readonly>Disponível</option>
                     </select>
                 </div>
 

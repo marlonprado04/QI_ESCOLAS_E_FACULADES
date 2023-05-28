@@ -27,8 +27,8 @@ public class ExemplarDTO {
         return obsDoExemplar;
     }
 
-    public void setObsDoExemplar(String numeroDoExemplar) {
-        this.obsDoExemplar = numeroDoExemplar;
+    public void setObsDoExemplar(String obsDoExemplar) {
+        this.obsDoExemplar = obsDoExemplar;
     }
 
     public String getStatus() {

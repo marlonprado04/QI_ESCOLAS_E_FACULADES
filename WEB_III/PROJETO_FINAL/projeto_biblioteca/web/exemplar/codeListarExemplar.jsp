@@ -26,11 +26,11 @@
             <h1 class="form-title">Lista de Exemplares</h1>
             <table class="table">
                 <tr>
-                    <th>ID</th>
-                    <th>ID do Livro</th>
+                    <th>ID do exemplar</th>
+                    <th>Código do Livro</th>
                     <th>Nome do Livro</th>
-                    <th>Número do Exemplar</th>
                     <th>Status</th>
+                    <th>Observação</th>
                     <th>Editar</th>
                     <th>Excluir</th>
                 </tr>
@@ -45,10 +45,14 @@
                     <td><%= lista.get(num).getId()%></td>
                     <td><%= lista.get(num).getIdLivro()%></td>
                     <td><%= objLivroDAO.obterTituloLivro(lista.get(num).getIdLivro())%></td>
-                    <td><%= lista.get(num).getObsDoExemplar()%></td>
                     <td><%= lista.get(num).getStatus()%></td>
+                    <td><%= lista.get(num).getObsDoExemplar()%></td>
                     <td>
-                        <a href="formAlterarExemplar.jsp?id=<%= lista.get(num).getId()%>">Editar</a>
+                        <a href="formAlterarExemplar.jsp?id=<%= lista.get(num).getId()%>
+                           &id_livro=<%= lista.get(num).getIdLivro()%>
+                           &titulo_livro=<%= objLivroDAO.obterTituloLivro(lista.get(num).getIdLivro())%>
+                           &obs_do_exemplar=<%= lista.get(num).getObsDoExemplar()%>
+                           &status=<%= lista.get(num).getStatus()%>">Editar</a>
                     </td>
                     <td>
                         <a href="formExcluirExemplar.jsp?id=<%= lista.get(num).getId()%>">Excluir</a>

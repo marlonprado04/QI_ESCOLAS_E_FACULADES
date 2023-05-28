@@ -83,16 +83,15 @@ public class ExemplarDAO {
     // Método para alterar as informações de um exemplar
     public void AlterarExemplar(ExemplarDTO objExemplarDTO) throws ClassNotFoundException {
 
-        String sql = "UPDATE exemplar SET id_livro = ?, obs_do_exemplar = ?, status = ? WHERE id = ?";
+        String sql = "UPDATE exemplar SET obs_do_exemplar = ?, status = ? WHERE id = ?";
 
         con = new ConexaoDAO().conexaoBD();
 
         try {
             pstm = con.prepareStatement(sql);
-            pstm.setInt(1, objExemplarDTO.getIdLivro());
-            pstm.setString(2, objExemplarDTO.getObsDoExemplar());
-            pstm.setString(3, objExemplarDTO.getStatus());
-            pstm.setInt(4, objExemplarDTO.getId());
+            pstm.setString(1, objExemplarDTO.getObsDoExemplar());
+            pstm.setString(2, objExemplarDTO.getStatus());
+            pstm.setInt(3, objExemplarDTO.getId());
             pstm.execute();
             pstm.close();
         } catch (SQLException e) {
