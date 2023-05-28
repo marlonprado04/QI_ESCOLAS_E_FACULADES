@@ -55,7 +55,11 @@
                            &status=<%= lista.get(num).getStatus()%>">Editar</a>
                     </td>
                     <td>
-                        <a href="formExcluirExemplar.jsp?id=<%= lista.get(num).getId()%>">Excluir</a>
+                        <a href="formExcluirExemplar.jsp?id=<%= lista.get(num).getId()%>
+                           &id_livro=<%= lista.get(num).getIdLivro()%>
+                           &titulo_livro=<%= objLivroDAO.obterTituloLivro(lista.get(num).getIdLivro())%>
+                           &obs_do_exemplar=<%= lista.get(num).getObsDoExemplar()%>
+                           &status=<%= lista.get(num).getStatus()%>">Excluir</a>
                     </td>
                 </tr>
                 <%
