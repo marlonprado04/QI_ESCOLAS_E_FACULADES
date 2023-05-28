@@ -33,11 +33,6 @@
                 objExemplarDTO.setNumeroDoExemplar(Integer.parseInt(request.getParameter("numero_do_exemplar")));
                 objExemplarDTO.setStatus(request.getParameter("status"));
 
-                // Printando para ver se está passando corretamente
-                //out.print(request.getParameter("id_livro"));
-                //out.print(request.getParameter("numero_do_exemplar"));
-                //out.print(request.getParameter("status"));
-
                 // Criando objeto da classe ExemplarDAO para fazer a operação de cadastro
                 // no banco de dados a partir da classe ExemplarDTO
                 ExemplarDAO objExemplarDAO = new ExemplarDAO();
