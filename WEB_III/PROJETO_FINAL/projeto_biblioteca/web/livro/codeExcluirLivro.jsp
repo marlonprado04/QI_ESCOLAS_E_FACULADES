@@ -21,7 +21,6 @@
             <div class="menu">
                 <a href="../aluno/codeListarAluno.jsp">Alunos</a>
                 <a href="../livro/codeListarLivro.jsp">Livros</a>
-                <a href="../autor/codeListarAutor.jsp">Autores</a>
                 <a href="../exemplar/codeListarExemplar.jsp">Exemplares</a>
                 <a href="../emprestimo/codeListarEmprestimo.jsp">Empréstimos</a>
             </div>
