@@ -72,8 +72,8 @@
             </table>
 
             <div class="button-container">
-                <form action="formInserirExemplar.jsp">
-                    <button class="form-button" type="submit">Inserir novo exemplar</button>
+                <form action="../livro/codeListarLivro.jsp">
+                    <button class="form-button" type="submit">Ir para lista de livro</button>
                 </form>
             </div>
         </div>

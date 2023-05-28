@@ -26,13 +26,14 @@
             <table class="table">
                 <tr>
                     <th>Código</th>
-                    <th>Nome</th>
-                    <th>Sobrenome</th>
-                    <th>CPF</th>
-                    <th>Telefone</th>
-                    <th>Email</th>
-                    <th>Curso</th>
-                    <th>Alterar</th>
+                    <th>Titulo</th>
+                    <th>Editora</th>
+                    <th>Ano de lançamento</th>
+                    <th>Gênero</th>
+                    <th>ISBN</th>
+                    <th>Inserir exemplar?</th>
+                    <th>Listar exemplares?</th>
+                    <th>Editar</th>
                     <th>Excluir</th>
                 </tr>
                 <%
@@ -61,7 +62,7 @@
                            &editora=<%= lista.get(num).getEditora()%>
                            &ano_publicacao=<%= lista.get(num).getAnoPublicacao()%>
                            &genero=<%= lista.get(num).getGenero()%>
-                           &isbn=<%= lista.get(num).getIsbn()%>">Alterar</a>
+                           &isbn=<%= lista.get(num).getIsbn()%>">Editar</a>
                     </td>
                     <td>
                         <a href="formExcluirLivro.jsp?id=<%= lista.get(num).getId()%>
