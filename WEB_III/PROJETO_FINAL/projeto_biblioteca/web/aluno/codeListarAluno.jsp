@@ -51,7 +51,7 @@
                     <td><%= lista.get(num).getEmail()%></td>
                     <td><%= lista.get(num).getCurso()%></td>
 
-                    <td><a href="formInserirEmprestimo.jsp?id_aluno=<%= lista.get(num).getId()%>
+                    <td><a href="../emprestimo/formSelecionarLivroParaEmprestimo.jsp?id_aluno=<%= lista.get(num).getId()%>
                            &nome=<%= lista.get(num).getNome()%>
                            &sobrenome=<%= lista.get(num).getSobrenome()%>">Inserir</a></td>
 
