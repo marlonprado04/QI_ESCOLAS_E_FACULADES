@@ -31,6 +31,8 @@
                     <th>Telefone</th>
                     <th>Email</th>
                     <th>Curso</th>
+                    <th>Inserir empréstimo</th>
+                    <th>Listar empréstimos</th>
                     <th>Alterar</th>
                     <th>Excluir</th>
                 </tr>
@@ -49,6 +51,12 @@
                     <td><%= lista.get(num).getEmail()%></td>
                     <td><%= lista.get(num).getCurso()%></td>
 
+                    <td><a href="formInserirEmprestimo.jsp?id_aluno=<%= lista.get(num).getId()%>
+                           &nome=<%= lista.get(num).getNome()%>
+                           &sobrenome=<%= lista.get(num).getSobrenome()%>">Inserir</a></td>
+
+                    <td><a href="codeListarEmprestimoDoAluno.jsp?id_aluno=<%= lista.get(num).getId()%>">Listar</a></td>
+                    
                     <!-- No código abaixo estou passando as informações da lista 
                     para a outra página a partir do clique do usuário no link--> 
                     <td><a href="formAlterarAluno.jsp?id=<%= lista.get(num).getId()%>
