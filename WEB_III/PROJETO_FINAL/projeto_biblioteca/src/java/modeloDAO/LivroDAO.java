@@ -220,4 +220,35 @@ public class LivroDAO {
 
     }
 
+// Criando método para retornar o título do livro a partir do ID informado
+    public String obterTituloLivro(int idLivro) throws ClassNotFoundException {
+        // Criando variável para armazenar o título do livro
+        String tituloLivro = "";
+
+        // Criando comando SQL para extrair o título do livro a partir do ID informado
+        String sql = "SELECT titulo FROM livro WHERE id = ?";
+
+        // Obtendo a conexão com o banco de dados
+        con = new ConexaoDAO().conexaoBD();
+
+        try {
+            // Preparando o  comando SQL
+            pstm = con.prepareStatement(sql);
+
+            // Definindo o valor do parâmetro ID
+            pstm.setInt(1, idLivro);
+
+            // Atribuindo o resultado da query à variável de ResultSet
+            rs = pstm.executeQuery();
+
+            while (rs.next()) {
+                tituloLivro = rs.getString("titulo");
+            }
+
+        } catch (SQLException e) {
+            System.err.println(e);
+        }
+
+        return tituloLivro;
+    }
 }

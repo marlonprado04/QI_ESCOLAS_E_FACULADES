@@ -33,23 +33,28 @@
                 objExemplarDTO.setNumeroDoExemplar(Integer.parseInt(request.getParameter("numero_do_exemplar")));
                 objExemplarDTO.setStatus(request.getParameter("status"));
 
+                // Printando para ver se está passando corretamente
+                //out.print(request.getParameter("id_livro"));
+                //out.print(request.getParameter("numero_do_exemplar"));
+                //out.print(request.getParameter("status"));
+
                 // Criando objeto da classe ExemplarDAO para fazer a operação de cadastro
                 // no banco de dados a partir da classe ExemplarDTO
                 ExemplarDAO objExemplarDAO = new ExemplarDAO();
 
                 // Cadastrando exemplar a partir da função cadastrarExemplar dentro da classe ExemplarDAO
                 // usando os parâmetros da classe ExemplarDTO
-                objExemplarDAO.cadastrarExemplar(objExemplarDTO);
+                objExemplarDAO.CadastrarExemplar(objExemplarDTO);
 
                 // Imprimindo na tela a informação de que o exemplar foi cadastrado com sucesso
                 out.println("<div class='message-container'>");
                 out.println("<p class='message-text'>Exemplar cadastrado com sucesso!</p>");
                 out.println("<div class='button-row'>");
                 out.println("<div class='button-container'>");
-                out.println("<a class='button' href='formInserirExemplar.jsp'>Ir para o formulário</a>");
+                out.println("<a class='form-button' href='../livro/codeListarLivro.jsp'>Listar livros</a>");
                 out.println("</div>");
                 out.println("<div class='button-container'>");
-                out.println("<a class='button' href='codeListarExemplar.jsp'>Ir para lista de exemplares</a>");
+                out.println("<a class='form-button' href='codeListarExemplar.jsp'>Listar exemplares</a>");
                 out.println("</div>");
                 out.println("</div>");
 
@@ -58,10 +63,10 @@
                 out.println("<p class='message-text'>Exemplar não cadastrado devido a algum erro!</p>");
                 out.println("<div class='button-row'>");
                 out.println("<div class='button-container'>");
-                out.println("<a class='button' href='formInserirExemplar.jsp'>Ir para o formulário</a>");
+                out.println("<a class='form-button' href='../livro/codeListarLivro.jsp'>Listar livros</a>");
                 out.println("</div>");
                 out.println("<div class='button-container'>");
-                out.println("<a class='button' href='codeListarExemplar.jsp'>Ir para lista de exemplares</a>");
+                out.println("<a class='form-button' href='codeListarExemplar.jsp'>Listar exemplares</a>");
                 out.println("</div>");
                 out.println("</div>");
                 out.println("</div>");

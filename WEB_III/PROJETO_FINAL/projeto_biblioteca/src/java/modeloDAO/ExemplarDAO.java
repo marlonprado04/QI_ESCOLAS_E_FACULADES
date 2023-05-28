@@ -35,15 +35,14 @@ public class ExemplarDAO {
     }
 
     // Método para listar os exemplares de um livro específico
-    public ArrayList<ExemplarDTO> ListarExemplarPorLivro(int idLivro) throws ClassNotFoundException {
+    public ArrayList<ExemplarDTO> ListarExemplar() throws ClassNotFoundException {
 
-        String sql = "SELECT * FROM exemplar WHERE id_livro = ?";
+        String sql = "SELECT * FROM exemplar";
 
         con = new ConexaoDAO().conexaoBD();
 
         try {
             pstm = con.prepareStatement(sql);
-            pstm.setInt(1, idLivro);
             rs = pstm.executeQuery();
 
             while (rs.next()) {

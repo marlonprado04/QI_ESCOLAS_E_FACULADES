@@ -1,6 +1,4 @@
 <%@page import="java.util.ArrayList"%>
-<%@ page import="modeloDAO.LivroDAO" %>
-<%@ page import="modeloDTO.LivroDTO" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -32,16 +30,16 @@
             <div class="form-container">
                 <div class="form-row">
                     <label class="form-label" for="id_livro">ID do Livro:</label>
-                    <input class="form-input" type="text" id="id_livro" name="id_livro" placeholder="ID do livro" required <%= request.getParameter("id")%>>
+                    <input class="form-input" type="text" id="id_livro" name="id_livro" placeholder="ID do livro" required value="<%= request.getParameter("id_livro").trim()%>" readonly>
                 </div>
                 <div class="form-row">
                     <label class="form-label" for="titulo_livro">Titulo do Livro:</label>
-                    <input class="form-input" type="text" id="titulo_livro" name="titulo_livro" placeholder="Titulo do livro" required value="<%= request.getParameter("titulo")%>">
+                    <input class="form-input" type="text" id="titulo_livro" name="titulo_livro" placeholder="Titulo do livro" required value="<%= request.getParameter("titulo_livro")%>" readonly>
                 </div>
 
                 <div class="form-row">
-                    <label class="form-label" for="numero_exemplar">Número do Exemplar:</label>
-                    <input class="form-input" type="text" id="numero_exemplar" name="numero_exemplar" placeholder="Ex: 1" required>
+                    <label class="form-label" for="numero_do_exemplar">Número do Exemplar:</label>
+                    <input class="form-input" type="text" id="numero_do_exemplar" name="numero_do_exemplar" placeholder="Ex: 1" required>
                 </div>
 
                 <div class="form-row">
@@ -55,7 +53,9 @@
 
                 <div class="form-button-container">
                     <button class="form-button" type="submit">Cadastrar</button>
-                    <button class="form-button" type="button" onclick="location.href = 'codeListarExemplar.jsp'">Listar Exemplares</button>
+                    <button class="form-button" type="button" onclick="location.href = 'codeListarExemplarDoLivro.jsp'">Listar exemplares deste livro</button>
+                    <button class="form-button" type="button" onclick="location.href = 'codeListarExemplar.jsp'">Listar exemplares </button>
+
                 </div>
             </div>
 

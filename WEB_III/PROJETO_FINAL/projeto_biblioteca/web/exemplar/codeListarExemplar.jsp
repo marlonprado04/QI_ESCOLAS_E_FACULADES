@@ -1,7 +1,8 @@
-<%@ page import="modeloDTO.ExemplarDTO" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="modeloDAO.ExemplarDAO" %>
-<%@ page contentType="text/html; charset=UTF-8" %>
+<%@page import="modeloDTO.ExemplarDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="modeloDAO.ExemplarDAO"%>
+<%@page import="modeloDAO.LivroDAO" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -27,41 +28,31 @@
                 <tr>
                     <th>ID</th>
                     <th>ID do Livro</th>
+                    <th>Nome do Livro</th>
                     <th>Número do Exemplar</th>
                     <th>Status</th>
-                    <th>Alterar</th>
+                    <th>Editar</th>
                     <th>Excluir</th>
                 </tr>
                 <%
                     try {
-                        ExemplarDAO exemplarDAO = new ExemplarDAO();
-                        ArrayList<ExemplarDTO> lista = exemplarDAO.ListarExemplar();
-                        for (ExemplarDTO exemplar : lista) {
+                        ExemplarDAO objExemplarDAO = new ExemplarDAO();
+                        LivroDAO objLivroDAO = new LivroDAO();
+                        ArrayList<ExemplarDTO> lista = objExemplarDAO.ListarExemplar();
+                        for (int num = 0; num < lista.size(); num++) {
                 %>
                 <tr>
-                    <td><%= exemplar.getId()%></td>
-                    <td><%= exemplar.getIdLivro()%></td>
-                    <td><%= exemplar.getNumeroDoExemplar()%></td>
-                    <td><%= exemplar.getStatus()%></td>
-
-                    <!-- No código abaixo estou passando as informações da lista
-                    para a outra página a partir do clique do usuário no link-->
+                    <td><%= lista.get(num).getId()%></td>
+                    <td><%= lista.get(num).getIdLivro()%></td>
+                    <td><%= objLivroDAO.obterTituloLivro(lista.get(num).getIdLivro())%></td>
+                    <td><%= lista.get(num).getNumeroDoExemplar()%></td>
+                    <td><%= lista.get(num).getStatus()%></td>
                     <td>
-                        <a href="formAlterarExemplar.jsp?id=<%= exemplar.getId()%>
-                           &id_livro=<%= exemplar.getIdLivro()%>
-                           &numero_do_exemplar=<%= exemplar.getNumeroDoExemplar()%>
-                           &status=<%= exemplar.getStatus()%>">Alterar</a>
+                        <a href="formAlterarExemplar.jsp?id=<%= lista.get(num).getId()%>">Editar</a>
                     </td>
-
-                    <!-- No código abaixo estou passando as informações da lista
-                    para a outra página a partir do clique do usuário no link-->
                     <td>
-                        <a href="formExcluirExemplar.jsp?id=<%= exemplar.getId()%>
-                           &id_livro=<%= exemplar.getIdLivro()%>
-                           &numero_do_exemplar=<%= exemplar.getNumeroDoExemplar()%>
-                           &status=<%= exemplar.getStatus()%>">Excluir</a>
+                        <a href="formExcluirExemplar.jsp?id=<%= lista.get(num).getId()%>">Excluir</a>
                     </td>
-
                 </tr>
                 <%
                         }
@@ -73,7 +64,7 @@
 
             <div class="button-container">
                 <form action="formInserirExemplar.jsp">
-                    <button class="button" type="submit">Inserir novo exemplar</button>
+                    <button class="form-button" type="submit">Inserir novo exemplar</button>
                 </form>
             </div>
         </div>
