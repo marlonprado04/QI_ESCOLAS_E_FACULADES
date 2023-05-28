@@ -78,10 +78,15 @@ body {
     margin-top: 20px;
 }
 
+.form-button-container .form-button {
+    flex: 1;
+    margin-right: 10px;
+}
+
 /* Estilos do botão no formulário */
 .form-button {
     padding: 10px 20px;
-    background-color: #3a87ad;
+    background-color: #337ab7;
     color: #ffffff;
     border: none;
     border-radius: 3px;
@@ -93,7 +98,7 @@ body {
 }
 
 .form-button:hover {
-    background-color: #1f6482;
+    background-color: #286090;
 }
 
 /* Estilos da tabela */
@@ -140,9 +145,3 @@ body {
 .button-row {
     display: flex;
 }
-
-.button-container {
-    margin-right: 10px;
-}
-
-
