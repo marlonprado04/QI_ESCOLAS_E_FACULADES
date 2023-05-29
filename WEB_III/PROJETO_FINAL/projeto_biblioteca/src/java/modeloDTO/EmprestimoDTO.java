@@ -15,8 +15,8 @@ public class EmprestimoDTO {
     private int id;
     private int idExemplar;
     private int idAluno;
-    private Timestamp dataEmprestimo;
-    private Timestamp dataDevolucao;
+    private String dataEmprestimo;
+    private String dataDevolucao;
 
     public int getId() {
         return id;
@@ -42,19 +42,19 @@ public class EmprestimoDTO {
         this.idAluno = idAluno;
     }
 
-    public Timestamp getDataEmprestimo() {
+    public String getDataEmprestimo() {
         return dataEmprestimo;
     }
 
-    public void setDataEmprestimo(Timestamp dataEmprestimo) {
+    public void setDataEmprestimo(String dataEmprestimo) {
         this.dataEmprestimo = dataEmprestimo;
     }
 
-    public Timestamp getDataDevolucao() {
+    public String getDataDevolucao() {
         return dataDevolucao;
     }
 
-    public void setDataDevolucao(Timestamp dataDevolucao) {
+    public void setDataDevolucao(String dataDevolucao) {
         this.dataDevolucao = dataDevolucao;
     }
     

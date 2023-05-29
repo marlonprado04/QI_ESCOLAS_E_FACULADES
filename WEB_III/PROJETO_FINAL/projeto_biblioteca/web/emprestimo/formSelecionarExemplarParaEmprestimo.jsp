@@ -1,3 +1,5 @@
+<%@page import="modeloDTO.ExemplarDTO"%>
+<%@page import="modeloDAO.ExemplarDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="modeloDTO.LivroDTO"%>
 <%@page import="modeloDAO.LivroDAO"%>
@@ -69,37 +71,35 @@
 
         <!-- SESSÃO COM INFORMAÇÕES DO LIVROS -->
         <div class="container">
-            <h1 class="form-title">Lista de Livros</h1>
+            <h1 class="form-title">Lista de Exemplares</h1>
             <table class="table">
                 <tr>
-                    <th>ID</th>
-                    <th>Título</th>
-                    <th>Autor</th>
-                    <th>Editora</th>
-                    <th>Ano de Publicação</th>
-                    <th>Gênero</th>
-                    <th>ISBN</th>
-                    <th>Listar exemplares disponíveis</th>
-
+                    <th>ID do exemplar</th>
+                    <th>Código do Livro</th>
+                    <th>Nome do Livro</th>
+                    <th>Status</th>
+                    <th>Observação</th>
+                    <th>Incluir</th>
                 </tr>
                 <%
                     try {
-                        ArrayList<LivroDTO> lista = objLivroDAO.ListarLivro();
+                        ExemplarDAO objExemplarDAO = new ExemplarDAO();
+                        ArrayList<ExemplarDTO> lista = objExemplarDAO.ListarExemplarDoLivro(idLivro);
                         for (int num = 0; num < lista.size(); num++) {
                 %>
                 <tr>
                     <td><%= lista.get(num).getId()%></td>
-                    <td><%= lista.get(num).getTitulo()%></td>
-                    <td><%= lista.get(num).getAutor()%></td>
-                    <td><%= lista.get(num).getEditora()%></td>
-                    <td><%= lista.get(num).getAnoPublicacao()%></td>
-                    <td><%= lista.get(num).getGenero()%></td>
-                    <td><%= lista.get(num).getIsbn()%></td>
+                    <td><%= lista.get(num).getIdLivro()%></td>
+                    <td><%= objLivroDAO.obterTituloLivro(lista.get(num).getIdLivro())%></td>
+                    <td><%= lista.get(num).getStatus()%></td>
+                    <td><%= lista.get(num).getObsDoExemplar()%></td>
                     <td>
-                        <a href="../emprestimo/formSelecionarExemplarParaEmprestimo.jsp?id_aluno=<%= request.getParameter("id_aluno").trim()%>
+                        <a href="formInserirEmprestimo.jsp?id_aluno=<%= request.getParameter("id_aluno").trim()%>
                            &nome=<%= request.getParameter("nome")%>
-                           &sobrenome=<%= request.getParameter("sobrenome")%>
-                           &id_livro=<%= lista.get(num).getId()%>">Listar</a>
+                           &id_livro=<%= request.getParameter("id_livro")%>
+                           &titulo=<%=objLivroDAO.obterTituloLivro(idLivro).trim()%>
+                           &id_exemplar=<%= lista.get(num).getId()%>
+                           &obs_exemplar=<%= lista.get(num).getObsDoExemplar()%>">Incluir</a>
                     </td>
                 </tr>
                 <%
@@ -109,6 +109,8 @@
                     }
                 %>
             </table>
+
+        </div>
 
     </body>
 </html>

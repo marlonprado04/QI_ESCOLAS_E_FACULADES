@@ -25,8 +25,8 @@ public class EmprestimoDAO {
             pstm = con.prepareStatement(sql);
             pstm.setInt(1, objEmprestimoDTO.getIdAluno());
             pstm.setInt(2, objEmprestimoDTO.getIdExemplar());
-            pstm.setTimestamp(3, objEmprestimoDTO.getDataEmprestimo());
-            pstm.setTimestamp(4, objEmprestimoDTO.getDataDevolucao());
+            pstm.setString(3, objEmprestimoDTO.getDataEmprestimo());
+            pstm.setString(4, objEmprestimoDTO.getDataDevolucao());
             pstm.execute();
             pstm.close();
         } catch (SQLException e) {
@@ -51,8 +51,8 @@ public class EmprestimoDAO {
                 objEmprestimoDTO.setId(rs.getInt("id"));
                 objEmprestimoDTO.setIdAluno(rs.getInt("id_aluno"));
                 objEmprestimoDTO.setIdExemplar(rs.getInt("id_exemplar"));
-                objEmprestimoDTO.setDataEmprestimo(rs.getTimestamp("data_emprestimo"));
-                objEmprestimoDTO.setDataDevolucao(rs.getTimestamp("data_devolucao"));
+                objEmprestimoDTO.setDataEmprestimo(rs.getString("data_emprestimo"));
+                objEmprestimoDTO.setDataDevolucao(rs.getString("data_devolucao"));
                 lista.add(objEmprestimoDTO);
             }
 
@@ -93,8 +93,8 @@ public class EmprestimoDAO {
             pstm = con.prepareStatement(sql);
             pstm.setInt(1, objEmprestimoDTO.getIdAluno());
             pstm.setInt(2, objEmprestimoDTO.getIdExemplar());
-            pstm.setTimestamp(3, objEmprestimoDTO.getDataEmprestimo());
-            pstm.setTimestamp(4, objEmprestimoDTO.getDataDevolucao());
+            pstm.setString(3, objEmprestimoDTO.getDataEmprestimo());
+            pstm.setString(4, objEmprestimoDTO.getDataDevolucao());
             pstm.setInt(5, objEmprestimoDTO.getId());
             pstm.execute();
             pstm.close();
@@ -121,8 +121,8 @@ public class EmprestimoDAO {
                 objEmprestimoDTO.setId(rs.getInt("id"));
                 objEmprestimoDTO.setIdAluno(rs.getInt("id_aluno"));
                 objEmprestimoDTO.setIdExemplar(rs.getInt("id_livro"));
-                objEmprestimoDTO.setDataEmprestimo(rs.getTimestamp("data_emprestimo"));
-                objEmprestimoDTO.setDataDevolucao(rs.getTimestamp("data_devolucao"));
+                objEmprestimoDTO.setDataEmprestimo(rs.getString("data_emprestimo"));
+                objEmprestimoDTO.setDataDevolucao(rs.getString("data_devolucao"));
                 lista.add(objEmprestimoDTO);
             }
 
