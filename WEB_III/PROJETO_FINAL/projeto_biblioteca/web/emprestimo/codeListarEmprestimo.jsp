@@ -30,6 +30,7 @@
                     <th>Id do exemplar</th>
                     <th>Data do empréstimo</th>
                     <th>Data da devolução</th>
+
                     <th>Status</th>
 
                     <th>Alterar</th>
@@ -47,12 +48,16 @@
                     <td><%= lista.get(num).getIdExemplar()%></td>
                     <td><%= lista.get(num).getDataEmprestimo()%></td>
                     <td><%= lista.get(num).getDataDevolucao()%></td>
+
                     <td>Não devolvido</td>
 
 
                     <!-- No código abaixo estou passando as informações da lista 
                     para a outra página a partir do clique do usuário no link--> 
-                    <td>Alterar</td>
+                    <td><a href="formAlterarEmprestimo.jsp?id=<%= lista.get(num).getId()%>
+                           &id_aluno=<%= lista.get(num).getIdAluno()%>
+                           &id_exemplar=<%= lista.get(num).getIdExemplar()%>
+                           &data_devolucao=<%= lista.get(num).getDataDevolucao()%>&data_emprestimo=<%= lista.get(num).getDataEmprestimo()%>">Alterar</a></td>
 
                     <!-- No código abaixo estou passando as informações da lista 
                     para a outra página a partir do clique do usuário no link--> 

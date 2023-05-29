@@ -21,9 +21,8 @@
         <h1 class="form-title">Cadastrar novo empréstimo</h1>
 
         <form action="codeInserirEmprestimo.jsp" method="POST">
-
+            <!-- Informações do aluno-->
             <div class="form-container">
-                <!-- Informações do aluno-->
 
                 <div class="form-row">
                     <label class="form-label" for="id_aluno">ID do Aluno:</label>
@@ -33,8 +32,10 @@
                     <label class="form-label" for="nome">Nome:</label>
                     <input class="form-input" type="text" id="nome" name="nome" placeholder="Ex: Roberta" value="<%=request.getParameter("nome")%>" required>
                 </div>
+            </div>
 
-                <!-- Informações do livro-->
+            <!-- Informações do livro-->
+            <div class="form-container">
 
                 <div class="form-row">
                     <label class="form-label" for="id_livro">ID do Livro:</label>
@@ -44,8 +45,10 @@
                     <label class="form-label" for="titulo">Titulo</label>
                     <input class="form-input" type="text" id="titulo" name="titulo" placeholder="Ex: Dom Casmurro" value="<%=request.getParameter("titulo")%>" required>
                 </div>
+            </div>
 
-                <!-- Informações do exemplar-->
+            <!-- Informações do exemplar-->
+            <div class="form-container">
 
                 <div class="form-row">
                     <label class="form-label" for="id_exemplar">ID do Exemplar:</label>
@@ -64,25 +67,30 @@
                         <option value="Emprestado" selected readonly>Emprestado</option>
                     </select>
                 </div>
+            </div>
+            <!-- Informações do empréstimo-->
+
+            <div class="form-container">
 
                 <div class="form-row">
                     <label class="form-label" for="data_emprestimo">Data de Empréstimo:</label>
-                    <input class="form-input" type="date" id="data_emprestimo" name="data_emprestimo" placeholder="Ex: 2023-05-20 14:30:00" required>
-                </div>
-                
-                <div class="form-row">
-                    <label class="form-label" for="data_devolucao">Data de Devolução:</label>
-                    <input class="form-input" type="date" id="data_devolucao" name="data_devolucao" placeholder="Ex: 2023-06-01 10:00:00" required>
+                    <input class="form-input" type="date" id="data_emprestimo" name="data_emprestimo" placeholder="Ex: 2023-05-20" required>
                 </div>
 
-                <div class="form-button-container">
-                    <button class="form-button btn-submit" type="submit">Cadastrar</button>
-                    <button class="form-button" type="button" onclick="location.href = 'codeListarEmprestimo.jsp'">Listar empréstimos</button>
-                    <button class="form-button" type="button" onclick="location.href = 'formConsultarEmprestimoPorAluno.jsp'">Consultar Por Aluno</button>
+                <div class="form-row">
+                    <label class="form-label" for="data_devolucao">Data de Devolução:</label>
+                    <input class="form-input" type="date" id="data_devolucao" name="data_devolucao" placeholder="Ex: 2023-06-01" required>
                 </div>
             </div>
 
-        </form>
+            <div class="form-button-container">
+                <button class="form-button btn-submit" type="submit">Cadastrar</button>
+                <button class="form-button" type="button" onclick="location.href = 'codeListarEmprestimo.jsp'">Listar empréstimos</button>
+                <button class="form-button" type="button" onclick="location.href = 'formConsultarEmprestimoPorAluno.jsp'">Consultar Por Aluno</button>
+            </div>
+        </div>
 
-    </body>
+    </form>
+
+</body>
 </html>
