@@ -43,6 +43,7 @@ CREATE TABLE emprestimo(
     id_aluno INT NOT NULL,
     data_emprestimo VARCHAR(10) NOT NULL,
     data_devolucao VARCHAR(10) NOT NULL,
+    status VARCHAR(10) NOT NULL,
     CONSTRAINT fk_emprestimo_exemplar FOREIGN KEY (id_exemplar) REFERENCES exemplar(id) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT fk_emprestimo_aluno FOREIGN KEY (id_aluno) REFERENCES aluno(id) ON DELETE CASCADE ON UPDATE CASCADE    
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;

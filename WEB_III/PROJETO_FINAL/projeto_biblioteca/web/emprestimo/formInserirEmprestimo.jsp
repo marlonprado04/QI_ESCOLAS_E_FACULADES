@@ -61,8 +61,8 @@
                 </div>
 
                 <div class="form-row">
-                    <label class="form-label" for="status">Status:</label>
-                    <select class="form-input" id="status" name="status" readonly required>
+                    <label class="form-label" for="status_exemplar">Status:</label>
+                    <select class="form-input" id="status_exemplar" name="status_exemplar" readonly required>
                         <option value="" disabled readonly>Selecione o status</option>
                         <option value="Emprestado" selected readonly>Emprestado</option>
                     </select>
@@ -80,6 +80,16 @@
                 <div class="form-row">
                     <label class="form-label" for="data_devolucao">Data de Devolução:</label>
                     <input class="form-input" type="date" id="data_devolucao" name="data_devolucao" placeholder="Ex: 2023-06-01" required>
+                </div>
+
+                <div class="form-row">
+                    <label class="form-label" for="status_emprestimo">Status:</label>
+                    <select class="form-input" id="status_emprestimo" name="status_emprestimo" required>
+                        <option value="" disabled>Selecione o status</option>
+                        <option value="Empenhado" name="status_emprestimo">Empenhado</option>
+                        <option value="Finalizado" name="status_emprestimo">Finalizado</option>
+                        <option value="Atrasado" name="status_emprestimo">Atrasado</option>
+                    </select>
                 </div>
             </div>
 

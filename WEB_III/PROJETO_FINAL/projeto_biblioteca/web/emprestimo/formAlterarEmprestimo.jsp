@@ -51,6 +51,16 @@
                     <input class="form-input" type="date" name="data_devolucao" value="<%= request.getParameter("data_devolucao")%>">
                 </div>
 
+                <div class="form-row">
+                    <label class="form-label" for="status_emprestimo">Status:</label>
+                    <select class="form-input" id="status_emprestimo" name="status_emprestimo" required>
+                        <option value="<%= request.getParameter("status")%>" disabled><%= request.getParameter("status")%></option>
+                        <option value="Empenhado">Emprestado</option>
+                        <option value="Finalizado">Finalizado</option>
+                        <option value="Atrasado">Atrasado</option>
+                    </select>
+                </div>
+
                 <div class="form-button-container">
                     <button class="form-button" type="submit" onclick="location.href = 'codeAlterarEmprestimo.jsp'">Realizar alteração</button>
                     <button class="form-button" type="button" onclick="location.href = 'codeListarEmprestimo.jsp'">Listar empréstimos</button>

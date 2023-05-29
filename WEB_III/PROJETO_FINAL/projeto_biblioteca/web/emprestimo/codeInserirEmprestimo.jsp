@@ -30,7 +30,6 @@
 
                 // --------------------------------------------------------
                 // EMPRÉSTIMO
-                
                 // Criando objeto da classe EMPRESTIMODTO para fazer a transferência de informações
                 // do formulário para a classe EMPRESTIMO
                 EmprestimoDTO objEmprestimoDTO = new EmprestimoDTO();
@@ -40,6 +39,7 @@
                 objEmprestimoDTO.setIdExemplar(Integer.parseInt(request.getParameter("id_exemplar").trim()));
                 objEmprestimoDTO.setDataEmprestimo(request.getParameter("data_emprestimo"));
                 objEmprestimoDTO.setDataDevolucao(request.getParameter("data_devolucao"));
+                objEmprestimoDTO.setStatus(request.getParameter("status_emprestimo"));
 
                 // Criando objeto da classe EMPRESTIMODAO para fazer a operação de cadastro
                 // no banco de dados a partir da classe EMPRESTIMODTO
@@ -50,7 +50,6 @@
                 objEmprestimoDAO.CadastrarEmprestimo(objEmprestimoDTO);
 
                 //----------------------------------------------------------
-                
                 // EXEMPLAR
                 // Criando objeto da classe ExemplarDTO para fazer a transferência de informações
                 // do formulário para a classe ExemplarDTO
@@ -60,7 +59,7 @@
                 // para alterar todos os campos apenas do exemplar com o ID informado
                 objExemplarDTO.setId(Integer.parseInt(request.getParameter("id_exemplar").trim()));
                 objExemplarDTO.setObsDoExemplar(request.getParameter("obs_exemplar"));
-                objExemplarDTO.setStatus(request.getParameter("status"));
+                objExemplarDTO.setStatus(request.getParameter("status_exemplar"));
 
                 // Criando objeto da classe ExemplarDAO para fazer a operação de ALTERAÇÃO
                 // no banco de dados a partir da classe ExemplarDTO

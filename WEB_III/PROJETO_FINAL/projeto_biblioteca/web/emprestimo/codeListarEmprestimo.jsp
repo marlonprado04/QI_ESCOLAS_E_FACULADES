@@ -30,7 +30,6 @@
                     <th>Id do exemplar</th>
                     <th>Data do empréstimo</th>
                     <th>Data da devolução</th>
-
                     <th>Status</th>
 
                     <th>Alterar</th>
@@ -48,8 +47,7 @@
                     <td><%= lista.get(num).getIdExemplar()%></td>
                     <td><%= lista.get(num).getDataEmprestimo()%></td>
                     <td><%= lista.get(num).getDataDevolucao()%></td>
-
-                    <td>Não devolvido</td>
+                    <td><%= lista.get(num).getStatus()%></td>
 
 
                     <!-- No código abaixo estou passando as informações da lista 
@@ -57,14 +55,18 @@
                     <td><a href="formAlterarEmprestimo.jsp?id=<%= lista.get(num).getId()%>
                            &id_aluno=<%= lista.get(num).getIdAluno()%>
                            &id_exemplar=<%= lista.get(num).getIdExemplar()%>
-                           &data_devolucao=<%= lista.get(num).getDataDevolucao()%>&data_emprestimo=<%= lista.get(num).getDataEmprestimo()%>">Alterar</a></td>
+                           &data_devolucao=<%= lista.get(num).getDataDevolucao()%>
+                           &data_emprestimo=<%= lista.get(num).getDataEmprestimo()%>
+                           $status=<%= lista.get(num).getStatus()%>">Alterar</a></td>
 
                     <!-- No código abaixo estou passando as informações da lista 
                     para a outra página a partir do clique do usuário no link--> 
                     <td><a href="formExcluirEmprestimo.jsp?id=<%= lista.get(num).getId()%>
                            &id_aluno=<%= lista.get(num).getIdAluno()%>
                            &id_exemplar=<%= lista.get(num).getIdExemplar()%>
-                           &data_devolucao=<%= lista.get(num).getDataDevolucao()%>&data_emprestimo=<%= lista.get(num).getDataEmprestimo()%>">Excluir</a></td>
+                           &data_devolucao=<%= lista.get(num).getDataDevolucao()%>
+                           &data_emprestimo=<%= lista.get(num).getDataEmprestimo()%>
+                           &status=<%= lista.get(num).getStatus()%>">Excluir</a></td>
 
                 </tr>
                 <%
@@ -76,7 +78,7 @@
             </table>
 
             <div class="button-container">
-                <form action="codeListarAluno.jsp">
+                <form action="../aluno/codeListarAluno.jsp">
                     <div class="form-button-container">
                         <button class="form-button" type="submit">Listar alunos</button>
                     </div>

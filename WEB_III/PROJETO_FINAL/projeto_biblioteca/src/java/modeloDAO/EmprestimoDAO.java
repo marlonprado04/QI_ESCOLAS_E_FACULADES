@@ -17,7 +17,7 @@ public class EmprestimoDAO {
     // Método para cadastrar um novo empréstimo
     public void CadastrarEmprestimo(EmprestimoDTO objEmprestimoDTO) throws ClassNotFoundException {
 
-        String sql = "INSERT INTO emprestimo (id_aluno, id_exemplar, data_emprestimo, data_devolucao) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO emprestimo (id_aluno, id_exemplar, data_emprestimo, data_devolucao, status) VALUES (?, ?, ?, ?, ?)";
 
         con = new ConexaoDAO().conexaoBD();
 
@@ -27,6 +27,8 @@ public class EmprestimoDAO {
             pstm.setInt(2, objEmprestimoDTO.getIdExemplar());
             pstm.setString(3, objEmprestimoDTO.getDataEmprestimo());
             pstm.setString(4, objEmprestimoDTO.getDataDevolucao());
+            pstm.setString(5, objEmprestimoDTO.getStatus());
+
             pstm.execute();
             pstm.close();
         } catch (SQLException e) {
@@ -53,6 +55,8 @@ public class EmprestimoDAO {
                 objEmprestimoDTO.setIdExemplar(rs.getInt("id_exemplar"));
                 objEmprestimoDTO.setDataEmprestimo(rs.getString("data_emprestimo"));
                 objEmprestimoDTO.setDataDevolucao(rs.getString("data_devolucao"));
+                objEmprestimoDTO.setStatus(rs.getString("status"));
+
                 lista.add(objEmprestimoDTO);
             }
 
@@ -85,7 +89,7 @@ public class EmprestimoDAO {
     // Método para alterar as informações de um empréstimo
     public void AlterarEmprestimo(EmprestimoDTO objEmprestimoDTO) throws ClassNotFoundException {
 
-        String sql = "UPDATE emprestimo SET id_aluno = ?, id_exemplar = ?, data_emprestimo = ?, data_devolucao = ? WHERE id = ?";
+        String sql = "UPDATE emprestimo SET id_aluno = ?, id_exemplar = ?, data_emprestimo = ?, data_devolucao = ?, status = ? WHERE id = ?";
 
         con = new ConexaoDAO().conexaoBD();
 
@@ -95,7 +99,9 @@ public class EmprestimoDAO {
             pstm.setInt(2, objEmprestimoDTO.getIdExemplar());
             pstm.setString(3, objEmprestimoDTO.getDataEmprestimo());
             pstm.setString(4, objEmprestimoDTO.getDataDevolucao());
-            pstm.setInt(5, objEmprestimoDTO.getId());
+            pstm.setString(5, objEmprestimoDTO.getStatus());
+
+            pstm.setInt(6, objEmprestimoDTO.getId());
             pstm.execute();
             pstm.close();
         } catch (SQLException e) {
@@ -123,6 +129,8 @@ public class EmprestimoDAO {
                 objEmprestimoDTO.setIdExemplar(rs.getInt("id_livro"));
                 objEmprestimoDTO.setDataEmprestimo(rs.getString("data_emprestimo"));
                 objEmprestimoDTO.setDataDevolucao(rs.getString("data_devolucao"));
+                objEmprestimoDTO.setStatus(rs.getString("status"));
+
                 lista.add(objEmprestimoDTO);
             }
 
