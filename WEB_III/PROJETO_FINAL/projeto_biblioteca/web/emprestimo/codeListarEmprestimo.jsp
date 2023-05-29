@@ -61,7 +61,10 @@
 
                     <!-- No código abaixo estou passando as informações da lista 
                     para a outra página a partir do clique do usuário no link--> 
-                    <td>Excluir</td>
+                    <td><a href="formExcluirEmprestimo.jsp?id=<%= lista.get(num).getId()%>
+                           &id_aluno=<%= lista.get(num).getIdAluno()%>
+                           &id_exemplar=<%= lista.get(num).getIdExemplar()%>
+                           &data_devolucao=<%= lista.get(num).getDataDevolucao()%>&data_emprestimo=<%= lista.get(num).getDataEmprestimo()%>">Excluir</a></td>
 
                 </tr>
                 <%
