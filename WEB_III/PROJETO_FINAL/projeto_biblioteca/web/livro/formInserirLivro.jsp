@@ -25,34 +25,34 @@
         <form action="codeInserirLivro.jsp" method="POST">
 
             <div class="form-container">
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="titulo">Título:</label>
-                    <input class="form-input" type="text" id="titulo" name="titulo" placeholder="Ex: Dom Quixote" required>
+                    <input class="form-control" type="text" id="titulo" name="titulo" placeholder="Ex: Dom Quixote" required>
                 </div>
                 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="autor">Autores: </label>
-                    <input class="form-input" type="text" id="autor" name="autor" placeholder="Ex: Machado de Assis" required>
+                    <input class="form-control" type="text" id="autor" name="autor" placeholder="Ex: Machado de Assis" required>
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="editora">Editora:</label>
-                    <input class="form-input" type="text" id="editora" name="editora" placeholder="Ex: Companhia das Letras" required>
+                    <input class="form-control" type="text" id="editora" name="editora" placeholder="Ex: Companhia das Letras" required>
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="ano_publicacao">Ano de Publicação:</label>
-                    <input class="form-input" type="text" id="ano_publicacao" name="ano_publicacao" placeholder="Ex: 1605" required>
+                    <input class="form-control" type="text" id="ano_publicacao" name="ano_publicacao" placeholder="Ex: 1605" required>
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="genero">Gênero:</label>
-                    <input class="form-input" type="text" id="genero" name="genero" placeholder="Ex: Romance" required>
+                    <input class="form-control" type="text" id="genero" name="genero" placeholder="Ex: Romance" required>
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="isbn">ISBN:</label>
-                    <input class="form-input" type="text" id="isbn" name="isbn" placeholder="Ex: 978-85-359-0277-9" required>
+                    <input class="form-control" type="text" id="isbn" name="isbn" placeholder="Ex: 978-85-359-0277-9" required>
                 </div>
 
                 <div class="form-button-container">

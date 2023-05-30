@@ -28,27 +28,27 @@
 
         <form action="codeAlterarExemplar.jsp" method="POST">
             <div class="form-container">
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">ID do exemplar</label>
-                    <input class="form-input" type="text" name="id" value="<%= request.getParameter("id")%>" readonly>
+                    <input class="form-control" type="text" name="id" value="<%= request.getParameter("id")%>" readonly>
                 </div>
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">Código do livro:</label>
-                    <input class="form-input" type="text" name="id_livro" value="<%= request.getParameter("id_livro")%>" readonly>
+                    <input class="form-control" type="text" name="id_livro" value="<%= request.getParameter("id_livro")%>" readonly>
                 </div>
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">Nome do livro:</label>
-                    <input class="form-input" type="text" name="titulo_livro" value="<%= request.getParameter("titulo_livro")%>" readonly>
+                    <input class="form-control" type="text" name="titulo_livro" value="<%= request.getParameter("titulo_livro")%>" readonly>
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">Status: </label>
-                    <input class="form-input" type="text" name="status" value="<%= request.getParameter("status")%>" readonly>
+                    <input class="form-control" type="text" name="status" value="<%= request.getParameter("status")%>" readonly>
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">Observação: </label>
-                    <input class="form-input" type="text" name="obs_do_exemplar" value="<%= request.getParameter("obs_do_exemplar")%>">
+                    <input class="form-control" type="text" name="obs_do_exemplar" value="<%= request.getParameter("obs_do_exemplar")%>">
                 </div>
 
                 <div class="form-button-container">

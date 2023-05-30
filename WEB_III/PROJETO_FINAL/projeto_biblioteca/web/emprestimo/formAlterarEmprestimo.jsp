@@ -28,32 +28,32 @@
 
         <form action="codeAlterarEmprestimo.jsp" method="POST">
             <div class="form-container">
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">ID do empréstimo</label>
-                    <input class="form-input" type="text" name="id" value="<%= request.getParameter("id")%>" readonly>
+                    <input class="form-control" type="text" name="id" value="<%= request.getParameter("id")%>" readonly>
                 </div>
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">ID do aluno</label>
-                    <input class="form-input" type="text" name="id_aluno" value="<%= request.getParameter("id_aluno")%>" readonly>
+                    <input class="form-control" type="text" name="id_aluno" value="<%= request.getParameter("id_aluno")%>" readonly>
                 </div>
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">ID do exemplar</label>
-                    <input class="form-input" type="text" name="id_exemplar" value="<%= request.getParameter("id_exemplar")%>" readonly>
+                    <input class="form-control" type="text" name="id_exemplar" value="<%= request.getParameter("id_exemplar")%>" readonly>
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">Data de empréstimo: </label>
-                    <input class="form-input" type="date" name="data_emprestimo" value="<%= request.getParameter("data_emprestimo")%>">
+                    <input class="form-control" type="date" name="data_emprestimo" value="<%= request.getParameter("data_emprestimo")%>">
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">Data de devolução: </label>
-                    <input class="form-input" type="date" name="data_devolucao" value="<%= request.getParameter("data_devolucao")%>">
+                    <input class="form-control" type="date" name="data_devolucao" value="<%= request.getParameter("data_devolucao")%>">
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="status_emprestimo">Status:</label>
-                    <select class="form-input" id="status_emprestimo" name="status_emprestimo" required>
+                    <select class="form-control" id="status_emprestimo" name="status_emprestimo" required>
                         <option value="<%= request.getParameter("status")%>" selected><%= request.getParameter("status")%></option>
                         <option value="Empenhado">Empenhado</option>
                         <option value="Finalizado">Finalizado</option>

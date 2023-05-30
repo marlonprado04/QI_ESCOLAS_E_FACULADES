@@ -33,17 +33,17 @@
         <form method="POST">
 
             <div class="form-container">
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="id_aluno">ID</label>
-                    <input class="form-input" type="text" id="id_aluno" name="id_aluno" placeholder="ID do aluno" required value="<%= request.getParameter("id_aluno").trim()%>" readonly>
+                    <input class="form-control" type="text" id="id_aluno" name="id_aluno" placeholder="ID do aluno" required value="<%= request.getParameter("id_aluno").trim()%>" readonly>
                 </div>
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="nome">Nome</label>
-                    <input class="form-input" type="text" id="nome" name="nome" placeholder="Nome do aluno" required value="<%= request.getParameter("nome")%>" readonly>
+                    <input class="form-control" type="text" id="nome" name="nome" placeholder="Nome do aluno" required value="<%= request.getParameter("nome")%>" readonly>
                 </div>
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="sobrenome">Sobrenome</label>
-                    <input class="form-input" type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome do aluno" required value="<%= request.getParameter("sobrenome")%>" readonly>
+                    <input class="form-control" type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome do aluno" required value="<%= request.getParameter("sobrenome")%>" readonly>
                 </div>
             </div>
         </form>
@@ -53,18 +53,18 @@
         <form method="POST">
 
             <div class="form-container">
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="id_livro">ID</label>
-                    <input class="form-input" type="text" id="id_livro" name="id_livro" placeholder="ID do livro" required value="<%= request.getParameter("id_livro")%>" readonly>
+                    <input class="form-control" type="text" id="id_livro" name="id_livro" placeholder="ID do livro" required value="<%= request.getParameter("id_livro")%>" readonly>
                 </div>
 
                 <%
                     LivroDAO objLivroDAO = new LivroDAO();
                     int idLivro = Integer.parseInt(request.getParameter("id_livro"));
                 %>
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="titulo">Titulo</label>
-                    <input class="form-input" type="text" id="titulo" name="titulo" placeholder="Titulo do aluno" required value="<%=objLivroDAO.obterTituloLivro(idLivro)%>" readonly>
+                    <input class="form-control" type="text" id="titulo" name="titulo" placeholder="Titulo do aluno" required value="<%=objLivroDAO.obterTituloLivro(idLivro)%>" readonly>
                 </div>
             </div>
         </form>

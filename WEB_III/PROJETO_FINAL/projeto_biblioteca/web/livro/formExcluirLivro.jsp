@@ -29,34 +29,34 @@
 
         <form action="codeExcluirLivro.jsp" method="POST">
             <div class="form-container">
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">ID:</label>
-                    <input class="form-input" type="text" name="id" value="<%= request.getParameter("id")%>" readonly>
+                    <input class="form-control" type="text" name="id" value="<%= request.getParameter("id")%>" readonly>
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">Título:</label>
-                    <input class="form-input" type="text" name="titulo" value="<%= request.getParameter("titulo")%>" readonly> 
+                    <input class="form-control" type="text" name="titulo" value="<%= request.getParameter("titulo")%>" readonly> 
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">Editora:</label>
-                    <input class="form-input" type="text" name="editora" value="<%= request.getParameter("editora")%>" readonly>
+                    <input class="form-control" type="text" name="editora" value="<%= request.getParameter("editora")%>" readonly>
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">Ano de Publicação:</label>
-                    <input class="form-input" type="text" name="ano_publicacao" value="<%= request.getParameter("ano_publicacao")%>" readonly>
+                    <input class="form-control" type="text" name="ano_publicacao" value="<%= request.getParameter("ano_publicacao")%>" readonly>
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">Gênero:</label>
-                    <input class="form-input" type="text" name="genero" value="<%= request.getParameter("genero")%>" readonly>
+                    <input class="form-control" type="text" name="genero" value="<%= request.getParameter("genero")%>" readonly>
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">ISBN:</label>
-                    <input class="form-input" type="text" name="isbn" value="<%= request.getParameter("isbn")%>" readonly>
+                    <input class="form-control" type="text" name="isbn" value="<%= request.getParameter("isbn")%>" readonly>
                 </div>
 
                 <div class="form-button-container">

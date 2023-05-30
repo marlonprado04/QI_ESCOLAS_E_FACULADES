@@ -24,45 +24,45 @@
             <!-- Informações do aluno-->
             <div class="form-container">
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="id_aluno">ID do Aluno:</label>
-                    <input class="form-input" type="text" id="id_aluno" name="id_aluno" placeholder="Ex: 123" value="<%=request.getParameter("id_aluno")%>" required>
+                    <input class="form-control" type="text" id="id_aluno" name="id_aluno" placeholder="Ex: 123" value="<%=request.getParameter("id_aluno")%>" required>
                 </div>
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="nome">Nome:</label>
-                    <input class="form-input" type="text" id="nome" name="nome" placeholder="Ex: Roberta" value="<%=request.getParameter("nome")%>" required>
+                    <input class="form-control" type="text" id="nome" name="nome" placeholder="Ex: Roberta" value="<%=request.getParameter("nome")%>" required>
                 </div>
             </div>
 
             <!-- Informações do livro-->
             <div class="form-container">
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="id_livro">ID do Livro:</label>
-                    <input class="form-input" type="text" id="id_livro" name="id_livro" placeholder="Ex: 123" value="<%=request.getParameter("id_livro")%>" required>
+                    <input class="form-control" type="text" id="id_livro" name="id_livro" placeholder="Ex: 123" value="<%=request.getParameter("id_livro")%>" required>
                 </div>
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="titulo">Titulo</label>
-                    <input class="form-input" type="text" id="titulo" name="titulo" placeholder="Ex: Dom Casmurro" value="<%=request.getParameter("titulo")%>" required>
+                    <input class="form-control" type="text" id="titulo" name="titulo" placeholder="Ex: Dom Casmurro" value="<%=request.getParameter("titulo")%>" required>
                 </div>
             </div>
 
             <!-- Informações do exemplar-->
             <div class="form-container">
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="id_exemplar">ID do Exemplar:</label>
-                    <input class="form-input" type="text" id="id_exemplar" name="id_exemplar" placeholder="Ex: 456" value="<%=request.getParameter("id_exemplar")%>"required>
+                    <input class="form-control" type="text" id="id_exemplar" name="id_exemplar" placeholder="Ex: 456" value="<%=request.getParameter("id_exemplar")%>"required>
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="obs_exemplar">Observação: </label>
-                    <input class="form-input" type="text" id="obs_exemplar" name="obs_exemplar" placeholder="Ex: 456" value="<%=request.getParameter("obs_exemplar")%>"required>
+                    <input class="form-control" type="text" id="obs_exemplar" name="obs_exemplar" placeholder="Ex: 456" value="<%=request.getParameter("obs_exemplar")%>"required>
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="status_exemplar">Status:</label>
-                    <select class="form-input" id="status_exemplar" name="status_exemplar" readonly required>
+                    <select class="form-control" id="status_exemplar" name="status_exemplar" readonly required>
                         <option value="" disabled readonly>Selecione o status</option>
                         <option value="Emprestado" selected readonly>Emprestado</option>
                     </select>
@@ -72,19 +72,19 @@
 
             <div class="form-container">
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="data_emprestimo">Data de Empréstimo:</label>
-                    <input class="form-input" type="date" id="data_emprestimo" name="data_emprestimo" placeholder="Ex: 2023-05-20" required>
+                    <input class="form-control" type="date" id="data_emprestimo" name="data_emprestimo" placeholder="Ex: 2023-05-20" required>
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="data_devolucao">Data de Devolução:</label>
-                    <input class="form-input" type="date" id="data_devolucao" name="data_devolucao" placeholder="Ex: 2023-06-01" required>
+                    <input class="form-control" type="date" id="data_devolucao" name="data_devolucao" placeholder="Ex: 2023-06-01" required>
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="status_emprestimo">Status:</label>
-                    <select class="form-input" id="status_emprestimo" name="status_emprestimo" required>
+                    <select class="form-control" id="status_emprestimo" name="status_emprestimo" required>
                         <option value="" disabled>Selecione o status</option>
                         <option value="Empenhado" name="status_emprestimo">Empenhado</option>
                         <option value="Finalizado" name="status_emprestimo">Finalizado</option>

@@ -27,23 +27,23 @@
         <form action="codeInserirExemplar.jsp" method="POST">
 
             <div class="form-container">
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="id_livro">ID do Livro:</label>
-                    <input class="form-input" type="text" id="id_livro" name="id_livro" placeholder="ID do livro" required value="<%= request.getParameter("id_livro").trim()%>" readonly>
+                    <input class="form-control" type="text" id="id_livro" name="id_livro" placeholder="ID do livro" required value="<%= request.getParameter("id_livro").trim()%>" readonly>
                 </div>
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="titulo_livro">Titulo do Livro:</label>
-                    <input class="form-input" type="text" id="titulo_livro" name="titulo_livro" placeholder="Titulo do livro" required value="<%= request.getParameter("titulo_livro")%>" readonly>
+                    <input class="form-control" type="text" id="titulo_livro" name="titulo_livro" placeholder="Titulo do livro" required value="<%= request.getParameter("titulo_livro")%>" readonly>
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="obs_do_exemplar">Observação: </label>
-                    <input class="form-input" type="text" id="obs_do_exemplar" name="obs_do_exemplar" placeholder="Ex: Exemplar com assinatura" required>
+                    <input class="form-control" type="text" id="obs_do_exemplar" name="obs_do_exemplar" placeholder="Ex: Exemplar com assinatura" required>
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label" for="status">Status:</label>
-                    <select class="form-input" id="status" name="status" readonly required>
+                    <select class="form-control" id="status" name="status" readonly required>
                         <option value="" disabled readonly>Selecione o status</option>
                         <option value="Disponível" selected readonly>Disponível</option>
                     </select>

@@ -28,37 +28,37 @@
 
         <form action="codeAlterarLivro.jsp" method="POST">
             <div class="form-container">
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">ID do Livro:</label>
-                    <input class="form-input" type="text" name="id" value="<%= request.getParameter("id")%>" readonly>
+                    <input class="form-control" type="text" name="id" value="<%= request.getParameter("id")%>" readonly>
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">Título do Livro:</label>
-                    <input class="form-input" type="text" name="titulo" value="<%= request.getParameter("titulo")%>">
+                    <input class="form-control" type="text" name="titulo" value="<%= request.getParameter("titulo")%>">
                 </div>
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">Autores:</label>
-                    <input class="form-input" type="text" name="autor" value="<%= request.getParameter("autor")%>">
+                    <input class="form-control" type="text" name="autor" value="<%= request.getParameter("autor")%>">
                 </div>
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">Editora:</label>
-                    <input class="form-input" type="text" name="editora" value="<%= request.getParameter("editora")%>">
+                    <input class="form-control" type="text" name="editora" value="<%= request.getParameter("editora")%>">
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">Ano de Publicação:</label>
-                    <input class="form-input" type="text" name="ano_publicacao" value="<%= request.getParameter("ano_publicacao")%>">
+                    <input class="form-control" type="text" name="ano_publicacao" value="<%= request.getParameter("ano_publicacao")%>">
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">Gênero:</label>
-                    <input class="form-input" type="text" name="genero" value="<%= request.getParameter("genero")%>">
+                    <input class="form-control" type="text" name="genero" value="<%= request.getParameter("genero")%>">
                 </div>
 
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">ISBN:</label>
-                    <input class="form-input" type="text" name="isbn" value="<%= request.getParameter("isbn")%>">
+                    <input class="form-control" type="text" name="isbn" value="<%= request.getParameter("isbn")%>">
                 </div>
 
                 <div class="form-button-container">

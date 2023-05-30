@@ -29,9 +29,9 @@
 
         <form method="POST" action="codeConsultarLivroPorTitulo.jsp">
             <div class="form-container">
-                <div class="form-row">
+                <div class="form-group">
                     <label class="form-label">Titulo</label>
-                    <input class="form-input" type="text" name="titulo" placeholder="Digite aqui o titulo do livro...">
+                    <input class="form-control" type="text" name="titulo" placeholder="Digite aqui o titulo do livro...">
                 </div>
 
                 <div class="form-button-container">
