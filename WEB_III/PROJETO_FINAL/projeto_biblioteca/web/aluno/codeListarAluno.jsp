@@ -39,14 +39,14 @@
                 <nav class="navbar navbar-light bg-light">
                     <form class="form-inline" action='codeConsultarAlunoPorNome.jsp' method="POST">
                         <input class="form-control mr-sm-2" type="search" placeholder="Digite o nome..." aria-label="Search" name='nome'>
-                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick="location.href = 'codeConsultarAlunoPorNome.jsp'">Pesquisar nome</button>
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick="location.href = 'codeConsultarAlunoPorNome.jsp'">Pesquisar por nome</button>
                     </form>
                 </nav>
 
                 <nav class="navbar navbar-light bg-light">
                     <form class="form-inline" action='codeConsultarAlunoPorCpf.jsp' method="POST">
                         <input class="form-control mr-sm-2" type="search" placeholder="Digite o CPF..." aria-label="Search" name='cpf'>
-                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick="location.href = 'codeConsultarAlunoPorCpf.jsp'">Pesquisar CPF</button>
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick="location.href = 'codeConsultarAlunoPorCpf.jsp'">Pesquisar por CPF</button>
                     </form>
                 </nav>
             </div>
