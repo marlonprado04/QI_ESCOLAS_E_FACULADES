@@ -8,7 +8,7 @@
         <link rel="stylesheet" type="text/css" href="../estilos/style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Consultar por CPF</title>
     </head>
     <body>
 
@@ -35,7 +35,7 @@
 
 
         <div class="container">
-            <h1 class="form-title">Resultado da consulta pelo nome: <%=request.getParameter("nome")%></h1>
+            <h1 class="form-title">Resultado da consulta pelo CPF: <%=request.getParameter("cpf")%></h1>
 
             <nav class="navbar navbar-light bg-light">
                 <form class="form-inline" action='codeConsultarAlunoPorNome.jsp' method="POST">
@@ -50,7 +50,7 @@
                     <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick="location.href = 'codeConsultarAlunoPorCpf.jsp'">Pesquisar CPF</button>
                 </form>
             </nav>
-
+            
             <table  class="table table-bordered table-striped">
                 <thead class="thead-dark">
                     <tr>
@@ -70,7 +70,7 @@
                     <%
                         try {
                             AlunoDAO objAlunoDAO = new AlunoDAO();
-                            ArrayList<AlunoDTO> lista = objAlunoDAO.ConsultarAlunoPorNome(request.getParameter("nome"));
+                            ArrayList<AlunoDTO> lista = objAlunoDAO.ConsultarAlunoPorCpf(request.getParameter("cpf"));
                             for (int num = 0; num < lista.size(); num++) {
                     %>
                     <tr>

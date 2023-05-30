@@ -31,9 +31,26 @@
                 </ul>
             </div>
         </div>
-        
+
         <div class="container">
             <h1 class='form-title'>Lista de Alunos</h1>
+
+            <div class="container">
+                <nav class="navbar navbar-light bg-light">
+                    <form class="form-inline" action='codeConsultarAlunoPorNome.jsp' method="POST">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Digite o nome..." aria-label="Search" name='nome'>
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick="location.href = 'codeConsultarAlunoPorNome.jsp'">Pesquisar nome</button>
+                    </form>
+                </nav>
+
+                <nav class="navbar navbar-light bg-light">
+                    <form class="form-inline" action='codeConsultarAlunoPorCpf.jsp' method="POST">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Digite o CPF..." aria-label="Search" name='cpf'>
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick="location.href = 'codeConsultarAlunoPorCpf.jsp'">Pesquisar CPF</button>
+                    </form>
+                </nav>
+
+            </div>
             <table class="table table-bordered table-striped">
                 <thead class="thead-dark">
                     <tr>
@@ -64,15 +81,15 @@
                         <td><%= lista.get(num).getEmail()%></td>
                         <td><%= lista.get(num).getCurso()%></td>
 
-                        <td><a href="../emprestimo/formSelecionarLivroParaEmprestimo.jsp?id_aluno=<%= lista.get(num).getId()%>
+                        <td><a class="btn btn-info btn-sm" href="../emprestimo/formSelecionarLivroParaEmprestimo.jsp?id_aluno=<%= lista.get(num).getId()%>
                                &nome=<%= lista.get(num).getNome()%>
                                &sobrenome=<%= lista.get(num).getSobrenome()%>">Inserir</a></td>
 
-                        <td><a href="codeListarEmprestimoDoAluno.jsp?id_aluno=<%= lista.get(num).getId()%>">Listar</a></td>
+                        <td><a class="btn btn-info btn-sm"href="codeListarEmprestimoDoAluno.jsp?id_aluno=<%= lista.get(num).getId()%>">Listar</a></td>
 
                         <!-- No código abaixo estou passando as informações da lista 
                         para a outra página a partir do clique do usuário no link--> 
-                        <td><a href="formAlterarAluno.jsp?id=<%= lista.get(num).getId()%>
+                        <td><a class="btn btn-dark btn-sm" href="formAlterarAluno.jsp?id=<%= lista.get(num).getId()%>
                                &nome=<%= lista.get(num).getNome()%>
                                &sobrenome=<%= lista.get(num).getSobrenome()%>
                                &cpf=<%=lista.get(num).getCpf()%>
@@ -82,7 +99,7 @@
 
                         <!-- No código abaixo estou passando as informações da lista 
                         para a outra página a partir do clique do usuário no link--> 
-                        <td><a href="formExcluirAluno.jsp?id=<%= lista.get(num).getId()%>
+                        <td><a class="btn btn-danger btn-sm" href="formExcluirAluno.jsp?id=<%= lista.get(num).getId()%>
                                &nome=<%= lista.get(num).getNome()%>
                                &sobrenome=<%= lista.get(num).getSobrenome()%>
                                &cpf=<%=lista.get(num).getCpf()%>
@@ -100,12 +117,10 @@
                 </tbody>
             </table>
 
-            <div class="button-container">
+            <div class="button-container float-right">
                 <form action="formInserirAluno.jsp">
                     <div class="form-button-container">
-                        <button class="btn btn-primary" type="submit">Inserir novo aluno</button>
-                        <button class="btn btn-secondary" type="button" onclick="location.href = 'codeListarAluno.jsp'">Listar Alunos</button>
-                        <button class="btn btn-secondary" type="button" onclick="location.href = 'formConsultarAlunoPorNome.jsp'">Consultar Por Nome</button>
+                        <button class="btn btn-primary " type="submit">Inserir novo aluno</button>
 
                     </div>
                 </form>
