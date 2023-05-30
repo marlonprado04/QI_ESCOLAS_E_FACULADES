@@ -36,7 +36,7 @@
         <div class="container">
 
 
-            <h1 class="form-title">Lista de Livros</h1>
+            <h1 class="form-title">Resultado da consulta pelo título: <%=request.getParameter("titulo")%></h1>
 
             <div class="container">
                 <nav class="navbar navbar-light bg-light">
@@ -124,8 +124,10 @@
 
             <div class="button-container">
                 <form action="formInserirLivro.jsp">
-                    <button class="btn btn-secondary" type="button" onclick="location.href = 'codeListarLivro.jsp'">Voltar para lista completa </button>
-                    <button class="btn btn-primary" type="submit">Inserir novo livro</button>
+                    <div class='form-button-container'>
+                        <button class="btn btn-secondary" type="button" onclick="location.href = 'codeListarLivro.jsp'">Voltar para lista completa </button>
+                        <button class="btn btn-primary" type="submit">Inserir novo livro</button>
+                    </div>
             </div>
         </form>
 

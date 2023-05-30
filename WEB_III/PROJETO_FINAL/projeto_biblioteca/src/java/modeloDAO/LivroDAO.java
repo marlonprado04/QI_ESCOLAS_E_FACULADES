@@ -255,7 +255,7 @@ public class LivroDAO {
         return tituloLivro;
     }
 
-// Criando método para consultar livro por nome
+// Criando método para consultar livro pelo titulo
     public ArrayList<LivroDTO> ConsultarLivroPorTitulo(String titulo) throws ClassNotFoundException {
 
         String sql = "SELECT * FROM livro WHERE titulo LIKE ?";
@@ -265,6 +265,38 @@ public class LivroDAO {
         try {
             pstm = con.prepareStatement(sql);
             pstm.setString(1, "%" + titulo + "%");
+            rs = pstm.executeQuery();
+
+            while (rs.next()) {
+                LivroDTO objLivroDTO = new LivroDTO();
+                objLivroDTO.setId(rs.getInt("id"));
+                objLivroDTO.setTitulo(rs.getString("titulo"));
+                objLivroDTO.setAutor(rs.getString("autor"));
+                objLivroDTO.setEditora(rs.getString("editora"));
+                objLivroDTO.setAnoPublicacao(rs.getString("ano_publicacao"));
+                objLivroDTO.setGenero(rs.getString("genero"));
+                objLivroDTO.setIsbn(rs.getString("isbn"));
+                lista.add(objLivroDTO);
+            }
+
+            pstm.close();
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+        return lista;
+    }
+
+    // Criando método para consultar livro pelo autor
+    public ArrayList<LivroDTO> ConsultarLivroPorAutor(String autor) throws ClassNotFoundException {
+
+        String sql = "SELECT * FROM livro WHERE autor LIKE ?";
+
+        con = new ConexaoDAO().conexaoBD();
+
+        try {
+            pstm = con.prepareStatement(sql);
+            pstm.setString(1, "%" + autor + "%");
             rs = pstm.executeQuery();
 
             while (rs.next()) {

@@ -30,9 +30,9 @@
                         <a class="nav-link" href="../emprestimo/codeListarEmprestimo.jsp">Empréstimo</a>
                     </li>
                 </ul>
-                </ul>
             </div>
         </div>
+        
         <% try {
                 // Criando objeto da classe ALUNODTO para fazer a transferência de informações
                 // do formulário para a classe ALUNO

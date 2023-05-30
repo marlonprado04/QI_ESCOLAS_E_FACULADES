@@ -124,7 +124,6 @@
                     <div class="form-button-container">
                         <button class="btn btn-secondary" type="button" onclick="location.href = 'codeListarAluno.jsp'">Voltar para lista completa </button>
                         <button class="btn btn-primary" type="submit">Inserir novo aluno</button>
-
                     </div>
                 </form>
             </div>
