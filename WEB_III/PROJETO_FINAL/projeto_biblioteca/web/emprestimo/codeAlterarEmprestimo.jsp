@@ -19,8 +19,7 @@
             </div>
         </div>
         <%
-            
-            
+
             try {
                 // Criando objeto da classe EMPRESTIMODTO para fazer a transferência de informações
                 // do formulário para a classe EMPRESTIMODTO
@@ -33,7 +32,7 @@
                 objEmprestimoDTO.setIdExemplar(Integer.parseInt(request.getParameter("id_exemplar").trim()));
                 objEmprestimoDTO.setDataDevolucao(request.getParameter("data_devolucao"));
                 objEmprestimoDTO.setDataEmprestimo(request.getParameter("data_emprestimo"));
-                
+                objEmprestimoDTO.setStatus(request.getParameter("status_emprestimo"));
 
                 // Criando objeto da classe EMPRESTIMODAO para fazer a operação de ALTERAÇÃO
                 // no banco de dados a partir da classe EMPRESTIMODAO

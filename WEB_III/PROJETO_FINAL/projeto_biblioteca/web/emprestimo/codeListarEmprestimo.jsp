@@ -50,23 +50,21 @@
                     <td><%= lista.get(num).getStatus()%></td>
 
 
-                    <!-- No código abaixo estou passando as informações da lista 
-                    para a outra página a partir do clique do usuário no link--> 
+                    <!-- No código abaixo estou passando as informações da lista para a outra página a partir do clique do usuário no link--> 
                     <td><a href="formAlterarEmprestimo.jsp?id=<%= lista.get(num).getId()%>
                            &id_aluno=<%= lista.get(num).getIdAluno()%>
                            &id_exemplar=<%= lista.get(num).getIdExemplar()%>
-                           &data_devolucao=<%= lista.get(num).getDataDevolucao()%>
-                           &data_emprestimo=<%= lista.get(num).getDataEmprestimo()%>
-                           $status=<%= lista.get(num).getStatus()%>">Alterar</a></td>
+                           &status=<%= lista.get(num).getStatus()%>
+                           &data_devolucao=<%= lista.get(num).getDataDevolucao()%>&data_emprestimo=<%= lista.get(num).getDataEmprestimo()%>">Alterar</a></td>
+
 
                     <!-- No código abaixo estou passando as informações da lista 
                     para a outra página a partir do clique do usuário no link--> 
                     <td><a href="formExcluirEmprestimo.jsp?id=<%= lista.get(num).getId()%>
                            &id_aluno=<%= lista.get(num).getIdAluno()%>
                            &id_exemplar=<%= lista.get(num).getIdExemplar()%>
-                           &data_devolucao=<%= lista.get(num).getDataDevolucao()%>
-                           &data_emprestimo=<%= lista.get(num).getDataEmprestimo()%>
-                           &status=<%= lista.get(num).getStatus()%>">Excluir</a></td>
+                           &status=<%= lista.get(num).getStatus()%>
+                           &data_devolucao=<%= lista.get(num).getDataDevolucao()%>&data_emprestimo=<%= lista.get(num).getDataEmprestimo()%>">Excluir</a></td>
 
                 </tr>
                 <%
