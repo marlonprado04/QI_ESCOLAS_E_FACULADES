@@ -67,10 +67,10 @@
                 </div>
 
                 <div class="form-button-container">
-                    <button class="btn btn-primary" type="submit">Cadastrar</button>
                     <button class="btn btn-secondary" type="button" onclick="location.href = 'codeListarAluno.jsp'">Listar alunos</button>
+                    <button class="btn btn-primary" type="submit">Cadastrar</button>
                 </div>
-             
+
             </div>
 
         </form>

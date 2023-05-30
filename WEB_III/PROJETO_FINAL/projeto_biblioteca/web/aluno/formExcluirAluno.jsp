@@ -40,7 +40,7 @@
         <h1 class="form-title">Informações do aluno a ser excluído: </h1>
 
         <form action="codeExcluirAluno.jsp" method="POST">
-            
+
             <div class="form-container">
                 <div class="form-group">
                     <label>Código:</label>
@@ -78,8 +78,9 @@
                 </div>
 
                 <div class="form-button-container">
-                    <button class="btn btn-primary" type="submit" onclick="location.href = 'codeExcluirAluno.jsp'">Excluir aluno</button>
                     <button class="btn btn-secondary" type="button" onclick="location.href = 'codeListarAluno.jsp'">Listar Alunos</button>
+                    <button class="btn btn-danger" type="submit" onclick="location.href = 'codeExcluirAluno.jsp'">Excluir aluno</button>
+
                 </div>
             </div>
         </form>

@@ -76,8 +76,8 @@
                 </div>
 
                 <div class="form-button-container">
-                    <button class="btn btn-primary" type="submit" onclick="location.href = 'codeAlterarAluno.jsp'">Realizar alteração</button>
                     <button class="btn btn-secondary" type="button" onclick="location.href = 'codeListarAluno.jsp'">Listar Alunos</button>
+                    <button class="btn btn-primary" type="submit" onclick="location.href = 'codeAlterarAluno.jsp'">Realizar alteração</button>
                 </div>
             </div>
         </form>

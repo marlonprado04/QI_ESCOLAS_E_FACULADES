@@ -49,8 +49,9 @@
                         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick="location.href = 'codeConsultarAlunoPorCpf.jsp'">Pesquisar CPF</button>
                     </form>
                 </nav>
-
             </div>
+            
+            
             <table class="table table-bordered table-striped">
                 <thead class="thead-dark">
                     <tr>
