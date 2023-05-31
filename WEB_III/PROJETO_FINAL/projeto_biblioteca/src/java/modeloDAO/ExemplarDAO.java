@@ -129,4 +129,64 @@ public class ExemplarDAO {
         return lista;
     }
 
+    // Método para consultar exemplar por observação
+    public ArrayList<ExemplarDTO> ConsultarExemplarPorObservacao(String obs) throws ClassNotFoundException {
+
+        String sql = "SELECT * FROM exemplar WHERE obs_do_exemplar LIKE ?";
+
+        con = new ConexaoDAO().conexaoBD();
+
+        try {
+            pstm = con.prepareStatement(sql);
+            pstm.setString(1, "%" + obs + "%");
+            rs = pstm.executeQuery();
+
+            while (rs.next()) {
+                ExemplarDTO objExemplarDTO = new ExemplarDTO();
+                objExemplarDTO.setId(rs.getInt("id"));
+                objExemplarDTO.setIdLivro(rs.getInt("id_livro"));
+                objExemplarDTO.setObsDoExemplar(rs.getString("obs_do_exemplar"));
+                objExemplarDTO.setStatus(rs.getString("status"));
+
+                lista.add(objExemplarDTO);
+            }
+
+            pstm.close();
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+        return lista;
+    }
+
+    // Método para consultar exemplar por status
+    public ArrayList<ExemplarDTO> ConsultarExemplarPorStatus(String status) throws ClassNotFoundException {
+
+        String sql = "SELECT * FROM exemplar WHERE status LIKE ?";
+
+        con = new ConexaoDAO().conexaoBD();
+
+        try {
+            pstm = con.prepareStatement(sql);
+            pstm.setString(1, "%" + status + "%");
+            rs = pstm.executeQuery();
+
+            while (rs.next()) {
+                ExemplarDTO objExemplarDTO = new ExemplarDTO();
+                objExemplarDTO.setId(rs.getInt("id"));
+                objExemplarDTO.setIdLivro(rs.getInt("id_livro"));
+                objExemplarDTO.setObsDoExemplar(rs.getString("obs_do_exemplar"));
+                objExemplarDTO.setStatus(rs.getString("status"));
+
+                lista.add(objExemplarDTO);
+            }
+
+            pstm.close();
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+        return lista;
+    }
+
 }

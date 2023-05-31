@@ -9,7 +9,7 @@
         <link rel="stylesheet" type="text/css" href="../estilos/style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <title>Lista de exemplares</title>
+        <title>Lista de Exemplares</title>
     </head>
     <body>
 
@@ -37,7 +37,26 @@
 
         <div class="container">
 
-            <h1 class="form-title">Lista de Exemplares</h1>
+
+            <h1 class="form-title">Resultado da busca de exemplares com observação: <%=request.getParameter("observacao")%></h1>
+
+            <div class="container">
+
+                <nav class="navbar navbar-light bg-light">
+                    <form class="form-inline" action='codeConsultarExemplarPorStatus.jsp' method="POST">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Digite o status..." aria-label="Search" name='status'>
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick="location.href = 'codeConsultarExemplarPorStatus.jsp'">Pesquisar por status</button>
+                    </form>
+                </nav>
+
+                <nav class="navbar navbar-light bg-light">
+                    <form class="form-inline" action='codeConsultarExemplarPorObservacao.jsp' method="POST">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Digite a observação..." aria-label="Search" name='observacao'>
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick="location.href = 'codeConsultarExemplarPorObservacao.jsp'">Pesquisar por observação</button>
+                    </form>
+                </nav>
+            </div>
+
 
             <table class="table table-bordered table-striped">
                 <thead class="thead-dark">
@@ -58,8 +77,8 @@
                     try {
                         ExemplarDAO objExemplarDAO = new ExemplarDAO();
                         LivroDAO objLivroDAO = new LivroDAO();
-                        int idLivro = Integer.parseInt(request.getParameter("id_livro").trim());
-                        ArrayList<ExemplarDTO> lista = objExemplarDAO.ListarExemplarDoLivro(idLivro);
+                        String obs = request.getParameter("observacao");
+                        ArrayList<ExemplarDTO> lista = objExemplarDAO.ConsultarExemplarPorObservacao(obs);
                         for (int num = 0; num < lista.size(); num++) {
                 %>
                 <tbody>
@@ -70,7 +89,6 @@
                         <td><%= lista.get(num).getId()%></td>
                         <td><%= lista.get(num).getStatus()%></td>
                         <td><%= lista.get(num).getObsDoExemplar()%></td>
-
                         <td>
                             <a class="btn btn-dark btn-sm" href="formAlterarExemplar.jsp?id=<%= lista.get(num).getId()%>
                                &id_livro=<%= lista.get(num).getIdLivro()%>
@@ -97,7 +115,7 @@
 
             <div class="button-container float-right">
                 <form action="../livro/codeListarLivro.jsp">
-                    <button class="form-button" type="submit">Ir para lista de livro</button>
+                    <button class="btn btn-primary" type="submit">Ir para lista de livros</button>
                 </form>
             </div>
         </div>

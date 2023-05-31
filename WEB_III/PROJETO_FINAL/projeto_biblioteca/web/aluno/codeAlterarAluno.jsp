@@ -32,7 +32,7 @@
                 </ul>
             </div>
         </div>
-        
+
         <% try {
                 // Criando objeto da classe ALUNODTO para fazer a transferência de informações
                 // do formulário para a classe ALUNO
@@ -81,6 +81,9 @@
                 out.println("</div>");
 
                 out.println("</div>");
+
+                out.println(e);
+
             }
         %>
     </body>

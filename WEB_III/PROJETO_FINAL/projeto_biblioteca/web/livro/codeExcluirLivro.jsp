@@ -76,6 +76,9 @@
                 out.println("</div>");
 
                 out.println("</div>");
+
+                out.println(e);
+
             }
         %>
     </body>

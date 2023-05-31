@@ -34,7 +34,6 @@
                         <a class="nav-link" href="../emprestimo/codeListarEmprestimo.jsp">Empréstimo</a>
                     </li>
                 </ul>
-                </ul>
             </div>
         </div>
         <% try {
@@ -79,6 +78,9 @@
                 out.println("</div>");
 
                 out.println("</div>");
+
+                out.println(e);
+
             }
         %>
     </body>

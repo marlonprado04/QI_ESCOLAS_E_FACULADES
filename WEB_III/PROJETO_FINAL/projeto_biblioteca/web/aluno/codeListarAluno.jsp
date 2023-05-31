@@ -73,7 +73,8 @@
                             ArrayList<AlunoDTO> lista = objAlunoDAO.ListarAluno();
                             for (int num = 0; num < lista.size(); num++) {
                     %>
-                    <tr>
+                    <tr>      
+
                         <td><%= lista.get(num).getId()%></td>
                         <td><%= lista.get(num).getNome()%></td>
                         <td><%= lista.get(num).getSobrenome()%></td>

@@ -79,6 +79,9 @@
                 out.println("<a class='btn btn-primary' href='formInserirLivro.jsp'>Cadastrar novo livro</a>");
                 out.println("<a class='btn btn-secondary' href='codeListarLivro.jsp'>Listar livros</a>");
                 out.println("</div>");
+
+                out.println(e);
+
             }
         %>
     </body>

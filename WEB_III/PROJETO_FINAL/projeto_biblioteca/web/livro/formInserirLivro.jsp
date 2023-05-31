@@ -7,9 +7,6 @@
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastro de livro</title>
-        <style>
-            <%@include file="../estilos/style.css" %>
-        </style>
     </head>
     <body>
 
