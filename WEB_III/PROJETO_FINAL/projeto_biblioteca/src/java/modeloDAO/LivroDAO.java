@@ -224,7 +224,7 @@ public class LivroDAO {
     }
 
 // Criando método para retornar o título do livro a partir do ID informado
-    public String obterTituloLivro(int idLivro) throws ClassNotFoundException {
+    public String ObterTituloLivro(int idLivro) throws ClassNotFoundException {
         // Criando variável para armazenar o título do livro
         String tituloLivro = "";
 

@@ -287,4 +287,35 @@ public class AlunoDAO {
         return lista;
     }
 
+    // Criando método para retornar o título do livro a partir do ID informado
+    public String ObterNomeDoAluno(int idAluno) throws ClassNotFoundException {
+        // Criando variável para armazenar o título do livro
+        String nome = "";
+
+        // Criando comando SQL para extrair o título do livro a partir do ID informado
+        String sql = "SELECT nome FROM aluno WHERE id = ?";
+
+        // Obtendo a conexão com o banco de dados
+        con = new ConexaoDAO().conexaoBD();
+
+        try {
+            // Preparando o  comando SQL
+            pstm = con.prepareStatement(sql);
+
+            // Definindo o valor do parâmetro ID
+            pstm.setInt(1, idAluno);
+
+            // Atribuindo o resultado da query à variável de ResultSet
+            rs = pstm.executeQuery();
+
+            while (rs.next()) {
+                nome = rs.getString("nome");
+            }
+
+        } catch (SQLException e) {
+            System.err.println(e);
+        }
+
+        return nome;
+    }
 }

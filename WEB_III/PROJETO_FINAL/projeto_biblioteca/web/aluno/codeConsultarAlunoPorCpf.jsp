@@ -89,7 +89,7 @@
                                &nome=<%= lista.get(num).getNome()%>
                                &sobrenome=<%= lista.get(num).getSobrenome()%>">Inserir</a></td>
 
-                        <td><a class="btn btn-info btn-sm" href="codeListarEmprestimoDoAluno.jsp?id_aluno=<%= lista.get(num).getId()%>">Listar</a></td>
+                        <td><a class="btn btn-info btn-sm" href="../emprestimo/codeListarEmprestimoDoAluno.jsp?id_aluno=<%= lista.get(num).getId()%>">Listar</a></td>
 
                         <!-- No código abaixo estou passando as informações da lista 
                         para a outra página a partir do clique do usuário no link--> 
