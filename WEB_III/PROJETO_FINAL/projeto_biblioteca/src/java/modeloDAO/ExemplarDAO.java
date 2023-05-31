@@ -218,4 +218,36 @@ public class ExemplarDAO {
 
         return lista;
     }
+
+    // Criando método para retornar a observação do exemplar a partir do ID informado
+    public String ObterObservacaoDoExemplar(int idExemplar) throws ClassNotFoundException {
+        // Criando variável para armazenar a observação do exemplar
+        String obs = "";
+
+        // Criando comando SQL para extrair a observação do exemplar a partir do ID informado
+        String sql = "SELECT obs_do_exemplar FROM exemplar WHERE id = ?";
+
+        // Obtendo a conexão com o banco de dados
+        con = new ConexaoDAO().conexaoBD();
+
+        try {
+            // Preparando o  comando SQL
+            pstm = con.prepareStatement(sql);
+
+            // Definindo o valor do parâmetro ID
+            pstm.setInt(1, idExemplar);
+
+            // Atribuindo o resultado da query à variável de ResultSet
+            rs = pstm.executeQuery();
+
+            while (rs.next()) {
+                obs = rs.getString("obs_do_exemplar");
+            }
+
+        } catch (SQLException e) {
+            System.err.println(e);
+        }
+
+        return obs;
+    }
 }

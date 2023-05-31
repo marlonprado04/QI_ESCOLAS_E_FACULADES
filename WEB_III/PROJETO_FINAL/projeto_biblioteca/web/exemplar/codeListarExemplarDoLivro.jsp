@@ -65,7 +65,7 @@
                 <tbody>
                     <tr>
                         <td><%= lista.get(num).getIdLivro()%></td>
-                        <td><%= objLivroDAO.obterTituloLivro(lista.get(num).getIdLivro())%></td>
+                        <td><%= objLivroDAO.ObterTituloLivro(lista.get(num).getIdLivro())%></td>
 
                         <td><%= lista.get(num).getId()%></td>
                         <td><%= lista.get(num).getStatus()%></td>
@@ -74,14 +74,14 @@
                         <td>
                             <a class="btn btn-dark btn-sm" href="formAlterarExemplar.jsp?id=<%= lista.get(num).getId()%>
                                &id_livro=<%= lista.get(num).getIdLivro()%>
-                               &titulo_livro=<%= objLivroDAO.obterTituloLivro(lista.get(num).getIdLivro())%>
+                               &titulo_livro=<%= objLivroDAO.ObterTituloLivro(lista.get(num).getIdLivro())%>
                                &obs_do_exemplar=<%= lista.get(num).getObsDoExemplar()%>
                                &status=<%= lista.get(num).getStatus()%>">Editar</a>
                         </td>
                         <td>
                             <a class="btn btn-danger btn-sm" href="formExcluirExemplar.jsp?id=<%= lista.get(num).getId()%>
                                &id_livro=<%= lista.get(num).getIdLivro()%>
-                               &titulo_livro=<%= objLivroDAO.obterTituloLivro(lista.get(num).getIdLivro())%>
+                               &titulo_livro=<%= objLivroDAO.ObterTituloLivro(lista.get(num).getIdLivro())%>
                                &obs_do_exemplar=<%= lista.get(num).getObsDoExemplar()%>
                                &status=<%= lista.get(num).getStatus()%>">Excluir</a>
                         </td>
@@ -97,7 +97,7 @@
 
             <div class="button-container float-right">
                 <form action="../livro/codeListarLivro.jsp">
-                    <button class="form-button" type="submit">Ir para lista de livro</button>
+                    <button class="btn btn-primary" type="submit">Ir para lista de livro</button>
                 </form>
             </div>
         </div>

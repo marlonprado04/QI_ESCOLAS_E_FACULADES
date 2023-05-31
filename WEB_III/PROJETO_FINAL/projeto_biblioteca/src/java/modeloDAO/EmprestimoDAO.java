@@ -141,6 +141,72 @@ public class EmprestimoDAO {
 
         return lista;
     }
-    
-   
+
+    // Método para consultar empréstimo por data
+    public ArrayList<EmprestimoDTO> ConsultarEmprestimoPorData(String data) throws ClassNotFoundException {
+
+        String sql = "SELECT * FROM emprestimo WHERE data_emprestimo LIKE ? OR data_devolucao like ?";
+
+        con = new ConexaoDAO().conexaoBD();
+
+        try {
+            pstm = con.prepareStatement(sql);
+            pstm.setString(1, "%" + data + "%");
+            pstm.setString(2, "%" + data + "%");
+            rs = pstm.executeQuery();
+
+            while (rs.next()) {
+                EmprestimoDTO objEmprestimoDTO = new EmprestimoDTO();
+                objEmprestimoDTO.setId(rs.getInt("id"));
+                objEmprestimoDTO.setIdAluno(rs.getInt("id_aluno"));
+                objEmprestimoDTO.setIdExemplar(rs.getInt("id_exemplar"));
+
+                objEmprestimoDTO.setDataDevolucao(rs.getString("data_devolucao"));
+                objEmprestimoDTO.setDataEmprestimo(rs.getString("data_emprestimo"));
+                objEmprestimoDTO.setStatus(rs.getString("status"));
+
+                lista.add(objEmprestimoDTO);
+            }
+
+            pstm.close();
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+        return lista;
+    }
+
+    // Método para consultar empréstimo por status
+    public ArrayList<EmprestimoDTO> ConsultarEmprestimoPorStatus(String status) throws ClassNotFoundException {
+
+        String sql = "SELECT * FROM emprestimo WHERE status LIKE ?";
+
+        con = new ConexaoDAO().conexaoBD();
+
+        try {
+            pstm = con.prepareStatement(sql);
+            pstm.setString(1, "%" + status + "%");
+            rs = pstm.executeQuery();
+
+            while (rs.next()) {
+                EmprestimoDTO objEmprestimoDTO = new EmprestimoDTO();
+                objEmprestimoDTO.setId(rs.getInt("id"));
+                objEmprestimoDTO.setIdAluno(rs.getInt("id_aluno"));
+                objEmprestimoDTO.setIdExemplar(rs.getInt("id_exemplar"));
+
+                objEmprestimoDTO.setDataDevolucao(rs.getString("data_devolucao"));
+                objEmprestimoDTO.setDataEmprestimo(rs.getString("data_emprestimo"));
+                objEmprestimoDTO.setStatus(rs.getString("status"));
+
+                lista.add(objEmprestimoDTO);
+            }
+
+            pstm.close();
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+        return lista;
+    }
+
 }

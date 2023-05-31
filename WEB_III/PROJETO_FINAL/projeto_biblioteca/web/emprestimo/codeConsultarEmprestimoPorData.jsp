@@ -12,10 +12,17 @@
         <link rel="stylesheet" type="text/css" href="../estilos/style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
         <title>JSP Page</title>
     </head>
     <body>
+
+        <script>
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
 
         <div class="header">
             <h1>Biblioteca</h1>
@@ -44,14 +51,14 @@
 
             <div class="container">
 
-                <h1 class="form-title">Lista de Empréstimo</h1>
+                <h1 class="form-title">Resultado da consulta pela data: <%=request.getParameter("data")%></h1>
 
 
                 <nav class="navbar navbar-light bg-light float-right">
                     <form class="form-inline" action='codeConsultarEmprestimoPorData.jsp' method="POST">
                         <input class="form-control mr-sm-2" type="search" placeholder="Digite a data..." aria-label="Search" name='data'>
                         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick="location.href = 'codeConsultarEmprestimoPorData.jsp'">Pesquisar por data (de empréstimo ou devolução)</button>
-                    </form>
+                    </form>      
                 </nav>
 
                 <nav class="navbar navbar-light bg-light float-right">
@@ -86,7 +93,7 @@
                         LivroDAO objLivroDAO = new LivroDAO();
 
                         EmprestimoDAO objEmprestimoDAO = new EmprestimoDAO();
-                        ArrayList<EmprestimoDTO> lista = objEmprestimoDAO.ListarEmprestimo();
+                        ArrayList<EmprestimoDTO> lista = objEmprestimoDAO.ConsultarEmprestimoPorData(request.getParameter("data").trim());
                         for (int num = 0; num < lista.size(); num++) {
                 %>
                 <tbody>

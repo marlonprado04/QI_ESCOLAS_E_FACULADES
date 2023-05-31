@@ -319,4 +319,51 @@ public class LivroDAO {
         return lista;
     }
 
+    public String ObterTituloLivroAtravesDoIdExemplar(int idExemplar) throws ClassNotFoundException, SQLException {
+        int idLivro = 0;
+        String titulo = "";
+
+        String sqlId = "SELECT id_livro FROM exemplar WHERE id = ?";
+        String sqlTitulo = "SELECT titulo FROM livro WHERE id = ?";
+
+        con = new ConexaoDAO().conexaoBD();
+
+        try {
+            pstm = con.prepareStatement(sqlId);
+            pstm.setInt(1, idExemplar);
+            rs = pstm.executeQuery();
+
+            if (rs.next()) {
+                idLivro = rs.getInt("id_livro");
+
+                try {
+                    pstm = con.prepareStatement(sqlTitulo);
+                    pstm.setInt(1, idLivro);
+                    rs = pstm.executeQuery();
+
+                    if (rs.next()) {
+                        titulo = rs.getString("titulo");
+                    }
+                } catch (SQLException e) {
+                    System.err.println(e);
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println(e);
+        } finally {
+            // Fechando recursos corretamente
+            if (rs != null) {
+                rs.close();
+            }
+            if (pstm != null) {
+                pstm.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        }
+
+        return titulo;
+    }
+
 }

@@ -33,11 +33,11 @@
         </div>
 
         <div class="container">
-            
+
             <h1 class='form-title'>Lista de Alunos</h1>
 
             <div class="container ">
-                
+
                 <nav class="navbar navbar-light bg-light float-right">
                     <form class="form-inline" action='codeConsultarAlunoPorNome.jsp' method="POST">
                         <input class="form-control mr-sm-2" type="search" placeholder="Digite o nome..." aria-label="Search" name='nome'>
@@ -52,8 +52,8 @@
                     </form>
                 </nav>
             </div>
-            
-            
+
+
             <table class="table table-bordered table-striped">
                 <thead class="thead-dark">
                     <tr>
@@ -89,7 +89,7 @@
                                &nome=<%= lista.get(num).getNome()%>
                                &sobrenome=<%= lista.get(num).getSobrenome()%>">Inserir</a></td>
 
-                        <td><a class="btn btn-info btn-sm" href="../emprestimo/codeListarEmprestimoDoAluno.jsp?id_aluno=<%= lista.get(num).getId()%>">Listar</a></td>
+                        <td><a  class="btn btn-info btn-sm disabled" href="../emprestimo/codeListarEmprestimoDoAluno.jsp?id_aluno=<%= lista.get(num).getId()%>">Listar</a></td>
 
                         <!-- No código abaixo estou passando as informações da lista 
                         para a outra página a partir do clique do usuário no link--> 
@@ -123,7 +123,7 @@
 
             <div class="button-container float-right">
                 <form action="formInserirAluno.jsp">
-                        <button class="btn btn-primary " type="submit">Inserir novo aluno</button>
+                    <button class="btn btn-primary " type="submit">Inserir novo aluno</button>
                 </form>
             </div>
         </div>
