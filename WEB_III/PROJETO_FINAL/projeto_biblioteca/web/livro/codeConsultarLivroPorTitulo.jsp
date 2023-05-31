@@ -39,14 +39,14 @@
             <h1 class="form-title">Resultado da consulta pelo título: <%=request.getParameter("titulo")%></h1>
 
             <div class="container">
-                <nav class="navbar navbar-light bg-light">
+                <nav class="navbar navbar-light bg-light float-right">
                     <form class="form-inline" action='codeConsultarLivroPorTitulo.jsp' method="POST">
                         <input class="form-control mr-sm-2" type="search" placeholder="Digite o titulo..." aria-label="Search" name='titulo'>
                         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick="location.href = 'codeConsultarLivroPorTitulo.jsp'">Pesquisar por titulo</button>
                     </form>
                 </nav>
 
-                <nav class="navbar navbar-light bg-light">
+                <nav class="navbar navbar-light bg-light float-right">
                     <form class="form-inline" action='codeConsultarLivroPorAutor.jsp' method="POST">
                         <input class="form-control mr-sm-2" type="search" placeholder="Digite o nome do autor..." aria-label="Search" name='autor'>
                         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick="location.href = 'codeConsultarLivroPorAutor.jsp'">Pesquisar por autor</button>

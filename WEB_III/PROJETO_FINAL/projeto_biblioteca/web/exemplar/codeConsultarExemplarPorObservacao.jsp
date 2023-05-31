@@ -42,14 +42,14 @@
 
             <div class="container">
 
-                <nav class="navbar navbar-light bg-light">
+                <nav class="navbar navbar-light bg-light float-right">
                     <form class="form-inline" action='codeConsultarExemplarPorStatus.jsp' method="POST">
                         <input class="form-control mr-sm-2" type="search" placeholder="Digite o status..." aria-label="Search" name='status'>
                         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick="location.href = 'codeConsultarExemplarPorStatus.jsp'">Pesquisar por status</button>
                     </form>
                 </nav>
 
-                <nav class="navbar navbar-light bg-light">
+                <nav class="navbar navbar-light bg-light float-right">
                     <form class="form-inline" action='codeConsultarExemplarPorObservacao.jsp' method="POST">
                         <input class="form-control mr-sm-2" type="search" placeholder="Digite a observação..." aria-label="Search" name='observacao'>
                         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick="location.href = 'codeConsultarExemplarPorObservacao.jsp'">Pesquisar por observação</button>

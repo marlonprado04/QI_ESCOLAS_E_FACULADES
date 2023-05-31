@@ -38,10 +38,11 @@
 
         <!-- SESSÃO COM INFORMAÇÕES DO ALUNO-->
 
-        <h1 class="form-title">Informações do aluno</h1>
 
         <form method="POST">
             <div class="form-container">
+                <h3>Informações do aluno: </h3>
+
                 <div class="form-group">
                     <label for="id_aluno">ID</label>
                     <input class="form-control" type="text" id="id_aluno" name="id_aluno" placeholder="ID do aluno" required value="<%= request.getParameter("id_aluno") != null ? request.getParameter("id_aluno").trim() : ""%>" readonly>
@@ -59,11 +60,11 @@
 
         <!-- SESSÃO COM INFORMAÇÕES DO LIVRO -->
 
-        <h1 class="form-title">Informações do livro</h1>
 
         <form method="POST">
 
             <div class="form-container">
+                <h3>Informações do livro: </h3>
                 <div class="form-group">
                     <label for="id_livro">ID</label>
                     <input class="form-control" type="text" id="id_livro" name="id_livro" placeholder="ID do livro" required value="<%= request.getParameter("id_livro")%>" readonly>
@@ -82,7 +83,7 @@
 
             <div class="container">
 
-                <nav class="navbar navbar-light bg-light">
+                <nav class="navbar navbar-light bg-light float-right">
                     <form class="form-inline" action='formSelecionarExemplarParaEmprestimo.jsp' method="POST">
                         <input class="form-control mr-sm-2" type="search" placeholder="Digite o status..." aria-label="Search" name='status'>
 
@@ -135,12 +136,13 @@
                         <td><%= lista.get(num).getObsDoExemplar()%></td>
 
                         <td>
-                            <a class="btn btn-dark btn-sm" href="formInserirEmprestimo.jsp?id_aluno=<%= request.getParameter("id_aluno") != null ? request.getParameter("id_aluno").trim() : ""%>
+                            <a class="btn btn-info btn-sm" href="formInserirEmprestimo.jsp?id_aluno=<%= request.getParameter("id_aluno") != null ? request.getParameter("id_aluno").trim() : ""%>
                                &nome=<%= request.getParameter("nome")%>
                                &sobrenome=<%= request.getParameter("sobrenome")%>
                                &id_livro=<%= request.getParameter("id_livro")%>
                                &titulo=<%=request.getParameter("titulo")%>
-                               &id_exemplar=">Adicionar</a>
+                               &id_exemplar=<%= lista.get(num).getId()%>
+                               &obs_exemplar=<%= lista.get(num).getObsDoExemplar()%>">Adicionar</a>
                         </td>
 
                     </tr>

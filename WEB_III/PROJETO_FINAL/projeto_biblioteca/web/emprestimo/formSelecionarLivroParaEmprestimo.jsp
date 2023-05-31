@@ -32,11 +32,10 @@
             </div>
         </div>
 
-        <h1 class="form-title">Informações do aluno</h1>
-
         <!-- SESSÃO COM INFORMAÇÕES DO ALUNO-->
         <form method="POST">
             <div class="form-container">
+                <h3>Informações do aluno:</h3>
                 <div class="form-group">
                     <label for="id_aluno">ID</label>
                     <input class="form-control" type="text" id="id_aluno" name="id_aluno" placeholder="ID do aluno" required value="<%= request.getParameter("id_aluno") != null ? request.getParameter("id_aluno").trim() : ""%>" readonly>
@@ -56,7 +55,7 @@
         <div class="container">
             <h1 class="form-title">Lista de Livros</h1>
             <div class="container">
-                <nav class="navbar navbar-light bg-light">
+                <nav class="navbar navbar-light bg-light float-right">
                     <form class="form-inline" action="formSelecionarLivroParaEmprestimo.jsp" method="GET">
                         <input class="form-control mr-sm-2" type="search" placeholder="Digite o título..." aria-label="Search" name="titulo" value="<%= request.getParameter("titulo") != null ? request.getParameter("titulo") : ""%>">
                         <input type="hidden" name="id_aluno" value="<%= request.getParameter("id_aluno") != null ? request.getParameter("id_aluno").trim() : ""%>">

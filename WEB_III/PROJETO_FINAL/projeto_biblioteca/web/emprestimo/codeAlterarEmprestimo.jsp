@@ -5,19 +5,33 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
         <link rel="stylesheet" type="text/css" href="../estilos/style.css">
         <title>Alteração de empréstimo</title>
     </head>
     <body>
         <div class="header">
             <h1>Biblioteca</h1>
-            <div class="menu">
-                <a href="../aluno/codeListarAluno.jsp">Alunos</a>
-                <a href="../livro/codeListarLivro.jsp">Livros</a>
-                <a href="../exemplar/codeListarExemplar.jsp">Exemplares</a>
-                <a href="../emprestimo/codeListarEmprestimo.jsp">Empréstimos</a>
+            <div>
+                <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../aluno/codeListarAluno.jsp">Alunos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../livro/codeListarLivro.jsp">Livros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../exemplar/codeListarExemplar.jsp">Exemplares</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../emprestimo/codeListarEmprestimo.jsp">Empréstimo</a>
+                    </li>
+                </ul>
+                </ul>
             </div>
         </div>
+
+
         <%
 
             try {
@@ -44,18 +58,22 @@
 
                 // Exibindo na tela a mensagem de que o EMPRÉSTIMO foi alterado com sucesso
                 out.println("<div class='message-container'>");
-                out.println("<p class='message-text'>Empréstimo alterado com sucesso!</p>");
-                out.println("<div class='button-container'>");
-                out.println("<a class='form-button' href='../emprestimo/codeListarEmprestimo.jsp'>Listar empréstimos</a>");
-                out.println("</div>");
+
+                out.println("<h2 class='form-title'>Empréstimo alterado com sucesso!</h2>");
+
+                out.println("<div class='form-button-container'>");
+                out.println("<a class='btn btn-secondary' href='../aluno/codeListarAluno.jsp'>Listar alunos</a>");
+                out.println("<a class='btn btn-primary' href='codeListarEmprestimo.jsp'>Listar empréstimos</a>");
                 out.println("</div>");
             } catch (Exception e) {
                 // Exibindo na tela a mensagem de que o EMPRÉSTIMO não foi alterado devido a algum erro
                 out.println("<div class='message-container'>");
-                out.println("<p class='message-text'>Empréstimo não alterado devido algum erro!</p>");
-                out.println("<div class='button-container'>");
-                out.println("<a class='form-button' href='../emprestimo/codeListarEmprestimo.jsp'>Listar empréstimos</a>");
-                out.println("</div>");
+
+                out.println("<h2 class='form-title'>Empréstimo não excluído devido algum erro!</h2>");
+
+                out.println("<div class='form-button-container'>");
+                out.println("<a class='btn btn-secondary' href='../aluno/codeListarAluno.jsp'>Listar alunos</a>");
+                out.println("<a class='btn btn-primary' href='codeListarEmprestimo.jsp'>Listar empréstimos</a>");
                 out.println("</div>");
             }
         %>
