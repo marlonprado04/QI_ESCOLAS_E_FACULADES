@@ -189,4 +189,33 @@ public class ExemplarDAO {
         return lista;
     }
 
+    // Método para listar os exemplares de um livro específico
+    public ArrayList<ExemplarDTO> ListarExemplarDoLivroComStatus(int idLivro, String status) throws ClassNotFoundException {
+
+        String sql = "SELECT * FROM exemplar WHERE id_livro= ? AND status LIKE ?";
+
+        con = new ConexaoDAO().conexaoBD();
+
+        try {
+            pstm = con.prepareStatement(sql);
+            pstm.setInt(1, idLivro);
+            pstm.setString(2, "%" + status + "%");
+            rs = pstm.executeQuery();
+
+            while (rs.next()) {
+                ExemplarDTO objExemplarDTO = new ExemplarDTO();
+                objExemplarDTO.setId(rs.getInt("id"));
+                objExemplarDTO.setIdLivro(rs.getInt("id_livro"));
+                objExemplarDTO.setObsDoExemplar(rs.getString("obs_do_exemplar"));
+                objExemplarDTO.setStatus(rs.getString("status"));
+                lista.add(objExemplarDTO);
+            }
+
+            pstm.close();
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+        return lista;
+    }
 }

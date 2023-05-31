@@ -129,8 +129,7 @@
                         <button class="btn btn-primary" type="submit">Inserir novo livro</button>
                     </div>
             </div>
-        </form>
 
-    </div>
-</body>
+        </div>
+    </body>
 </html>

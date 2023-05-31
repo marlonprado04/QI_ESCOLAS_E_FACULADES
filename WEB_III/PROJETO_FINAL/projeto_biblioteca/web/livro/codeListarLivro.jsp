@@ -128,8 +128,7 @@
                 <form action="formInserirLivro.jsp">
                     <button class="btn btn-primary" type="submit">Inserir novo livro</button>
             </div>
-        </form>
 
-    </div>
-</body>
+        </div>
+    </body>
 </html>

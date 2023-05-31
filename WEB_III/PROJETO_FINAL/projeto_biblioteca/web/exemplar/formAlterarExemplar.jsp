@@ -35,8 +35,8 @@
 
             </div>
         </div>
-        
-        
+
+
         <h1 class="form-title">Informações do exemplar a ser alterado: </h1>
 
         <form action="codeAlterarExemplar.jsp" method="POST">
@@ -55,8 +55,12 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Status: </label>
-                    <input class="form-control" type="text" name="status" value="<%= request.getParameter("status")%>" readonly>
+                    <label for="status">Status:</label>
+                    <select class="form-control" id="status" name="status" required>
+                        <option value="<%= request.getParameter("status")%>" selected><%= request.getParameter("status")%></option>
+                        <option value="Emprestado">Emprestado</option>
+                        <option value="Disponível">Disponível</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
