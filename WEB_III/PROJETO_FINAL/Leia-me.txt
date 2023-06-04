@@ -25,7 +25,7 @@ Programas necessários:
 
 - JDK na versão 20
 
-- Apache Tomcat na versão 8.2.4, configurado com o usuário "admin" e senha "admin";
+- Apache Tomcat na versão 10.1.7, configurado com o usuário "admin" e senha "admin";
 
 - A versão do XAMPP utilizada foi a 3.3.0
 
