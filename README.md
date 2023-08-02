@@ -2,4 +2,3 @@
 
  Aulas, exercícios, atividades e projetos do curso TÉCNICO EM INFORMÁTICA da QI
 
-Hello
